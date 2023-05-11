@@ -1,0 +1,49 @@
+:root {
+    --pr--color: #03045e;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--pr--color);
+}
+
+.navbar-brand {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 16px;
+}
+
+.nav-link.active {
+    font-weight: bold;
+}
+
+.btn.btn-primary {
+    width: 133px;
+    height: 40px;
+    background-color: #fff;
+    color: var(--pr--color);
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.btn.btn-primary:hover {
+    opacity: 0.8;
+}
+
+.btn.btn-secondary {
+    width: 133px;
+    height: 40px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.btn.btn-secondary:hover {
+    opacity: 0.8;
+}
