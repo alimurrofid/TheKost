@@ -108,3 +108,71 @@ body {
     font-size: 16px;
     font-weight: 700;
 }
+
+/* About Style */
+
+.about {
+    padding: 60px 0 60px 0;
+}
+
+.about .icon-boxes h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--pr--color);
+    margin-bottom: 15px;
+}
+
+.about .icon-box {
+    margin-top: 40px;
+}
+
+.about .icon-box .icon {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    border: 2px solid var(--pr--color);
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.about .icon-box .icon i {
+    color: var(--pr--color);
+    font-size: 32px;
+}
+
+.about .icon-box:hover .icon {
+    background: var(--pr--color);
+    border-color: var(--pr--color);
+}
+
+.about .icon-box:hover .icon i {
+    color: #fff;
+}
+
+.about .icon-box .title {
+    margin-left: 85px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.about .icon-box .title a {
+    color: var(--pr--color);
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.about .icon-box .description {
+    margin-left: 85px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.about .video-box {
+    background: url("../../assets/img/about.png") center center no-repeat;
+    background-size: contain;
+    min-height: 300px;
+}

@@ -7,16 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> --}}
 
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href={{ asset('assets/vendor/aos/aos.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/boxicons/css/boxicons.min.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/glightbox/css/glightbox.min.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/remixicon/remixicon.css') }} rel="stylesheet">
+    <link href={{ asset('assets/vendor/swiper/swiper-bundle.min.css') }} rel="stylesheet">
 
     <!-- CSS Style -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -90,12 +99,56 @@
         </div>
     </section>
 
+    <!-- about section -->
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch"
+                    data-aos="fade-right">
+                </div>
+
+                <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5"
+                    data-aos="fade-left">
+                    <h3>Tentang The Kost</h3>
+                    <p>The Kost adalah kos-kosan mahasiswa khusus laki-laki yang terletak pada jalan Semanggi
+                        Barat no.18 yang memiliki beberapa keunggulan, diantaranya</p>
+
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon"><i class="bx bx-fingerprint"></i></div>
+                        <h4 class="title"><a href="">Jarak ke kampus yang dekat</a></h4>
+                        <p class="description">Kos The Kost memiliki lokasi yang dekat dengan kampus
+                            Politeknik Negeri Malang, kita hanya perlu berjalan kaki kurang lebih 5 menit</p>
+                    </div>
+
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon"><i class="bx bx-gift"></i></div>
+                        <h4 class="title"><a href="">Harga relatif murah</a></h4>
+                        <p class="description">Harga kos Daarus Saa'dah jauh lebih murah dibandingkan dengan kos yang
+                            terdapat disekitar kampus Politeknik Negeri Malang yang biasanya mempunyai harga yang
+                            lumayan tinggi</p>
+                    </div>
+
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon"><i class="bx bx-atom"></i></div>
+                        <h4 class="title"><a href="">Fasilitas kos yang lumayan lengkap</a></h4>
+                        <p class="description">The Kost menyediakan fasilitas berupa meja, kursi, lemari dan
+                            juga kasur, termasuk gratis listrik, air dan parkir kendaraan yang aman</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+    </script> --}}
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
@@ -106,6 +159,18 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     -->
+
+    <!-- Vendor JS Files -->
+    <script src={{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}></script>
+    <script src={{ asset('assets/vendor/aos/aos.js') }}></script>
+    <script src={{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}></script>
+    <script src={{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}></script>
+    <script src={{ asset('assets/vendor/swiper/swiper-bundle.min.js') }}></script>
+    <script src={{ asset('assets/vendor/php-email-form/validate.js') }}></script>
+
+    <!-- Template Main JS File -->
+    <script src={{ asset('assets/js/main.js') }}></script>
+
 </body>
 
 </html>
