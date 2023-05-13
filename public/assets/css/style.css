@@ -292,3 +292,77 @@ body {
     background-size: contain;
     min-height: 300px;
 }
+
+/* facility style */
+
+.facility-button {
+    width: 238px;
+    height: 63px;
+    background-color: var(--pr--color);
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+#facility {
+    padding: 0 0 60px 0;
+}
+
+#facility h2 {
+    font-size: 48px;
+    font-weight: 500;
+    color: var(--pr--color);
+}
+
+.card-facility h5 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.card-facility span {
+    color: #fff;
+    font-size: 14px;
+}
+
+.card-facility .overlay {
+    background-color: rgb(0, 0, 0, 0);
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+
+.card-facility:hover .overlay {
+    background-color: rgb(0, 0, 0, 0.5);
+    opacity: 1;
+}
+
+.arrow-left {
+    border: none;
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+    background-color: var(--pr--color);
+    padding: 0;
+}
+
+.arrow-right {
+    border: none;
+    border-radius: 50%;
+    width: 61px;
+    height: 61px;
+    background-color: var(--pr--color);
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

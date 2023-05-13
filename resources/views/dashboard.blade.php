@@ -159,6 +159,93 @@
         </div>
     </section>
 
+    <!-- facility section -->
+    <section id="facility" class="mt-5 overflow-hidden">
+        <div class="container position-relative">
+            <div class="row mb-5">
+                <div class="col-9">
+                    <h2>Facility Kos</h2>
+                </div>
+                <div class="col-3">
+                    <button class="facility-button">Lihat Semua..
+                        <img src="{{ asset('assets/img/arrow_fcty.png') }}" alt="" class="ms-2">
+                    </button>
+                </div>
+            </div>
+
+            <div class="container position-relative">
+                <div class="row swiper mySwiper">
+                    <div class="col-12 d-flex justify-content-start swiper-wrapper">
+
+                        <div class="card-facility me-3 position-relative swiper-slide">
+                            <img src="{{ asset('assets/img/free-room.png') }}" alt="">
+
+                            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+                                    <h5>Free Space</h5>
+                                    <span>Free space within TV</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-facility me-3 position-relative swiper-slide">
+                            <img src="{{ asset('assets/img/bad-room.png') }}" alt="">
+
+                            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+                                    <h5>Badroom Kos</h5>
+                                    <span>Kamar minimalist Type-A2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-facility me-3 position-relative swiper-slide">
+                            <img src="{{ asset('assets/img/kicten-room.png') }}" alt="">
+
+                            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+                                    <h5>Kicten</h5>
+                                    <span>Kicten for member The Kost</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-facility me-3 position-relative swiper-slide">
+                            <img src="{{ asset('assets/img/outdoor-room.png') }}" alt="">
+
+                            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+                                    <h5>Outdoor Space</h5>
+                                    <span>Outdoor space with garden</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-facility me-3 position-relative swiper-slide">
+                            <img src="{{ asset('assets/img/free-room.png') }}" alt="">
+
+                            <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
+                                <div class="position-absolute top-50 start-50 translate-middle text-center w-100">
+                                    <h5>Kamar Kos</h5>
+                                    <span>Kamae minimalist Type-A2</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="arrow-left position-absolute start-0 top-50 translate-middle swiper-prev">
+                    <img src="{{ asset('assets/img/arrowF-left.png') }}" alt="">
+                </button>
+                <button class="arrow-right position-absolute end-0 top-50 translate-middle swiper-next">
+                    <img src="{{ asset('assets/img/arrowF-right.png') }}" alt="">
+                </button>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
