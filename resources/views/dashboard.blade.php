@@ -241,10 +241,46 @@
                 <button class="arrow-right position-absolute end-0 top-50 translate-middle swiper-next">
                     <img src="{{ asset('assets/img/arrowF-right.png') }}" alt="">
                 </button>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
+
+    <!-- Counts Section -->
+    <section id="counts" class="counts">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-emoji-smile"></i>
+                        <span>10</span>
+                        <p>Jumlah kamar</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                    <div class="count-box">
+                        <i class="bi bi-journal-richtext"></i>
+                        <span>10</span>
+                        <p>Jumlah penghuni kos</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="bi bi-headset"></i>
+                        <span>10</span>
+                        <p>Jumlah transaksi</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="count-box">
+                        <i class="bi bi-people"></i>
+                        <span>10</span>
+                        <p>Jumlah admin kos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Counts Section -->
 
 
     <!-- Optional JavaScript; choose one of the two! -->
