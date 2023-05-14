@@ -162,7 +162,7 @@
     <!-- facility section -->
     <section id="facility" class="mt-5 overflow-hidden">
         <div class="container position-relative">
-            <div class="row mb-5">
+            <div class="row mb-5" data-aos="zoom-out">
                 <div class="col-9">
                     <h2>Facility Kos</h2>
                 </div>
@@ -173,7 +173,7 @@
                 </div>
             </div>
 
-            <div class="container position-relative">
+            <div class="container position-relative" data-aos="zoom-out" data-aos-delay="100">
                 <div class="row swiper mySwiper">
                     <div class="col-12 d-flex justify-content-start swiper-wrapper">
 
