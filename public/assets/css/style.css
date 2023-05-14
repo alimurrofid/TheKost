@@ -61,6 +61,7 @@ body {
 .btn.btn-secondary:hover {
     opacity: 0.8;
 }
+/* end navbar style */
 
 /* Home style */
 
@@ -224,6 +225,7 @@ body {
         transform: translate(85px, 0%);
     }
 }
+/* end home style */
 
 /* About Style */
 
@@ -292,6 +294,7 @@ body {
     background-size: contain;
     min-height: 300px;
 }
+/* end about style */
 
 /* facility style */
 
@@ -366,6 +369,7 @@ body {
     height: 100%;
     object-fit: cover;
 }
+/* End facility style */
 
 /* Count style */
 
@@ -413,3 +417,43 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 14px;
 }
+/* End count style */
+
+/* Gallery Style */
+.gallery {
+    padding: 60px 0 60px 0;
+}
+
+.section-title {
+    margin-bottom: 40px;
+}
+.section-title h5 {
+    color: var(--pr--color);
+    font-size: 48px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.section-title span {
+    color: var(--pr--color);
+    opacity: 70%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.gallery .gallery-item {
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+
+.gallery .gallery-item img {
+    transition: all ease-in-out 0.4s;
+}
+
+.gallery .gallery-item:hover img {
+    transform: scale(1.1);
+}
+/* end gallery style */

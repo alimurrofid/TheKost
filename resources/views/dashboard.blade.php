@@ -282,6 +282,107 @@
     </section>
     <!-- End Counts Section -->
 
+    <!-- Preview Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h5>Gallery The Kost -<span>Some photos from Our Kost</span></h5>
+            </div>
+
+            <div class="row p-0 m-0" data-aos="fade-left">
+                <div class="col-md-8 pb-3">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="{{ asset('assets/img/glr-1.png') }}" class="gallery-lightbox">
+                            <img src="{{ asset('assets/img/glr-1.png') }}" alt="" class="w-100 h-100"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 pb-3 pl-2">
+                    <div class="row">
+                        <div class="col-md-12 pb-3">
+                            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                                <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
+                                    <img src="{{ asset('assets/img/glr-2.png') }}" alt=""
+                                        class="w-100 h-100" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                                <a href="{{ asset('assets/img/glr-3.png') }}" class="gallery-lightbox">
+                                    <img src="{{ asset('assets/img/glr-3.png') }}" alt=""
+                                        class="w-100 h-100" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-0 m-0" data-aos="fade-left">
+                <div class="col-md-4 pb-3 pl-2">
+                    <div class="row">
+                        <div class="col-md-12 pb-3">
+                            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                                <a href="{{ asset('assets/img/glr-4.png') }}" class="gallery-lightbox">
+                                    <img src="{{ asset('assets/img/glr-4.png') }}" alt=""
+                                        class="w-100 h-100" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                                <a href="{{ asset('assets/img/glr-5.png') }}" class="gallery-lightbox">
+                                    <img src="{{ asset('assets/img/glr-5.png') }}" alt=""
+                                        class="w-100 h-100" loading="lazy">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 pb-3">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="{{ asset('assets/img/glr-6.png') }}" class="gallery-lightbox">
+                            <img src="{{ asset('assets/img/glr-6.png') }}" alt="" class="w-100 h-100"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row p-0 m-0" data-aos="fade-left">
+                <div class="col">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
+                            <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
+                            <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
+                            <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
+                                loading="lazy">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Preview Section -->
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
