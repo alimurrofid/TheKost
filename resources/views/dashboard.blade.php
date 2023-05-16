@@ -383,6 +383,43 @@
     </section>
     <!-- End Preview Section -->
 
+    <!-- ======= Pricing Section ======= -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+
+            <div class="section-title" data-aos="fade-up">
+                <h5>Harga Kamar -<span>Our Pricing</span></h5>
+            </div>
+
+            <div class="row" data-aos="fade-left">
+                <div class="col-lg-6 col-md-6">
+                    <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                        <h3>Bulanan</h3>
+                        <h4><sup>Rp</sup>550.000<span> / bulan</span></h4>
+                        <div class="btn-wrap">
+                            <a href="https://api.whatsapp.com/send?phone=6285157582290&text=Permisi%2C%20apakah%20ada%20kamar%20kos%20yang%20kosong%3F%0A"
+                                target="_blank" class="btn-buy">Order now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 mt-4 mt-md-0">
+                    <div class="box-featured" data-aos="zoom-in" data-aos-delay="200">
+                        <h3>Tahunan</h3>
+                        <h4><sup>Rp</sup>6.600.000<span> / tahun</span></h4>
+                        <div class="btn-wrap">
+                            <a href="https://api.whatsapp.com/send?phone=6285157582290&text=Permisi%2C%20apakah%20ada%20kamar%20kos%20yang%20kosong%3F%0A"
+                                target="_blank" class="btn-buy-featured">Order now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Pricing Section -->
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
