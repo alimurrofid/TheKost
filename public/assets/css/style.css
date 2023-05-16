@@ -425,8 +425,9 @@ body {
 }
 
 .section-title {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
+.facility-section-title h5,
 .section-title h5 {
     color: var(--pr--color);
     font-size: 48px;
@@ -435,6 +436,7 @@ body {
     align-items: center;
 }
 
+.facility-section-title span,
 .section-title span {
     color: var(--pr--color);
     opacity: 70%;

@@ -164,7 +164,9 @@
         <div class="container position-relative">
             <div class="row mb-5" data-aos="zoom-out">
                 <div class="col-9">
-                    <h2>Facility Kos</h2>
+                    <div class="facility-section-title" data-aos="fade-up">
+                        <h5>Facility -<span>Some Facility from Our Kost</span></h5>
+                    </div>
                 </div>
                 <div class="col-3">
                     <button class="facility-button">Lihat Semua..
