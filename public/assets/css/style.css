@@ -553,3 +553,119 @@ body {
 }
 
 /* end pricing style */
+
+/* Contact style */
+
+#contact {
+    margin-top: 112px;
+    background-image: url("../../assets/img/bg-contact.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#contact .overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#contact .container {
+    padding: 215px 0 215px 0;
+}
+
+#contact h3 {
+    color: #fff;
+    font-style: normal;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+#contact h6 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+    margin: 19px 0 14px 0;
+}
+
+.info a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 17px;
+    width: 363px;
+    display: inline-block;
+}
+
+.thekost {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.card-contact {
+    width: 100%;
+    height: 445px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 58px 40px;
+}
+
+.card-contact h2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 60px;
+    color: var(--pr--color);
+    text-align: center;
+    margin-bottom: 21px;
+}
+
+.form-control {
+    background: #cacaca;
+    height: 76px !important;
+    border-radius: 0;
+}
+
+.form-floating label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #717171;
+}
+
+.button-contact {
+    background: var(--pr--color);
+    font-weight: 600;
+    border: none;
+    font-size: 24px;
+    line-height: 36px;
+    width: 100%;
+    color: #fff;
+    height: 75px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: 280px;
+    background: #000000;
+}
+
+footer a {
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    text-decoration: none;
+}
+
+.copyright {
+    bottom: 1%;
+    color: #fff;
+}
+
+/* End Contact style */

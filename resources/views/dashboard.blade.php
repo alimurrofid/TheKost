@@ -37,7 +37,10 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100">
         <div class="container">
-            <a class="navbar-brand" href="#">The Kost</a>
+            <a href="#">
+                <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
+            </a>
+            {{-- <a class="navbar-brand ms-3" href="#">The Kost</a> --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -420,6 +423,101 @@
         </div>
     </section>
     <!-- End Pricing Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+        <div class="container-fluid overlay h-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Butuh Konsultasi..?
+                            Silahkan kontak kami
+                            Kami Siap Membantu</h3>
+                        <div class="info">
+                            <h6>Contact</h6>
+                            <div class="mb-3 d-flex align-items-center">
+                                <div>
+                                    <img src="{{ asset('assets/img/addres.png') }}" alt="">
+                                </div>
+                                <a href="#">Jl. Semanggi Barat No.18, Lowokwaru, Malang
+                                    Indonesia</a>
+                            </div>
+                            <div class="mb-3">
+                                <img src="{{ asset('assets/img/telpon.png') }}" alt="">
+                                <a href="#">022-6545-2041</a>
+                            </div>
+                            <div class="mb-3">
+                                <img src="{{ asset('assets/img/pesan.png') }}" alt="">
+                                <a href="#">thekost@gmail.com</a>
+                            </div>
+
+                        </div>
+
+                        <h6>Social Media</h6>
+                        <a href="#" class="me-3"><img src="{{ asset('assets/img/fb.png') }}"
+                                alt=""></a>
+                        <a href="#" class="me-3"><img src="{{ asset('assets/img/tw.png') }}"
+                                alt=""></a>
+                        <a href="#" class="me-3"><img src="{{ asset('assets/img/ig.png') }}"
+                                alt=""></a>
+                        <a href="#" class="thekost">The Kost</a>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card-contact w-100">
+                            <form>
+                                <h2>Ada pertanyaan..?</h2>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput" class="d-flex align-items-center">Masukan email anda
+                                        disini...</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingInput"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInput" class="d-flex align-items-center">Pertanyaan
+                                        Anda..</label>
+                                </div>
+
+                                <button type="submit" class="button-contact">Send</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="d-flex align-items-center position-relative">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
+                        <a href="#" class="ms-2">The Kost</a>
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-evenly">
+                        <a href="#home">HOME</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#preview">FACILITY</a>
+                        <a href="#pricing">GALERY</a>
+                        <a href="#">DATA</a>
+                        <a href="#contact">CONTACT</a>
+                        <a href="#">LOGIN</a>
+                    </div>
+                </div>
+                <div class="row position-absolute copyright start-50 translate-middle">
+                    <div class="col-md-12 ">
+                        <p>© 2023 The Kost. All rights reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ======= End Footer ======= -->
 
 
 
