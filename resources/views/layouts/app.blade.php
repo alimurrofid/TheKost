@@ -1,71 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>@yield('title') - Starter Template</title>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <title>@yield('title') - The</title>
+    <!-- CSS Libraries -->
+    @stack('custom-css')
 
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap-5.1.3/css/bootstrap.css') }}">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/styleAdmin.css') }}">
-    <!-- FontAwesome CSS-->
-    <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome6.1.1/css/all.css') }}">
-    <!-- Boxicons CSS-->
-    <link rel="stylesheet" href="{{ asset('assets/modules/boxicons/css/boxicons.min.css') }}">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/stylestisla.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
 </head>
 
 <body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                @include('layouts.navbar')
+            </nav>
+            <div class="main-sidebar sidebar-style-2">
+                @include('layouts.sidebar')
+            </div>
 
-    <!--Topbar -->
-    <div class="topbar transition">
-        @include('layouts.navbar')
-    </div>
-
-
-    <!--Sidebar-->
-    <div class="sidebar transition overlay-scrollbars animate__animated  animate__slideInLeft">
-        @include('layouts.sidebar')
-    </div><!-- End Sidebar-->
-
-    <div class="sidebar-overlay"></div>
-
-    <!--Content Start-->
-    <div class="content-start transition  ">
-        @yield('content')
-    </div><!-- End Content-->
-
-    <!-- Footer -->
-    <footer>
-        @include('layouts.footer')
-    </footer>
-
-
-    <!-- Preloader -->
-    <div class="loader">
-        <div class="spinner-border text-light" role="status">
-            <span class="sr-only">Loading...</span>
+            <!-- Main Content -->
+            <div class="main-content">
+                @yield('content')
+            </div>
+            <footer class="main-footer">
+                @include('layouts.footer')
+            </footer>
         </div>
     </div>
 
-    <!-- Loader -->
-    <div class="loader-overlay"></div>
-
     <!-- General JS Scripts -->
-    <script src="{{ asset('assets/js/atrana.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="{{ asset('assets/js/stisla.js') }}"></script>
 
     <!-- JS Libraies -->
-    <script src="{{ asset('assets/modules/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/bootstrap-5.1.3/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/modules/popper/popper.min.js') }}"></script>
+    @stack('custom-js')
 
     <!-- Template JS File -->
-    <script src="{{ asset('assets/js/scriptAdmin.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+    <!-- Page Specific JS File -->
 </body>
 
 </html>

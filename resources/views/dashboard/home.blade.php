@@ -3,62 +3,24 @@
 @section('title', 'Homepage')
 
 @section('content')
-    <div class="container-fluid dashboard">
-        <div class="content-header">
-            <h1>Home Page</h1>
-            <p>This is Homepage</p>
+    <section class="section">
+        <div class="section-header">
+            <h1>Homepage</h1>
         </div>
 
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Avatar</h4>
-                    </div>
-                    <div class="card-body">
-                        <figure class="avatar mr-2 avatar-xl">
-                            <img src="assets/images/avatar/avatar-6.png" alt="...">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Avatar Icon</h4>
-                    </div>
-                    <div class="card-body">
-                        <figure class="avatar mr-2 avatar-xl">
-                            <img src="assets/images/avatar/avatar-5.png" alt="...">
-                            <img src="assets/images/avatar/avatar-5.png" class="avatar-icon" alt="...">
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Avatar Presence</h4>
-                    </div>
-                    <div class="card-body">
-                        <figure class="avatar mr-2 avatar-xl">
-                            <img src="assets/images/avatar/avatar-2.png" alt="...">
-                            <i class="avatar-presence online"></i>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>Avatar Initial</h4>
-                    </div>
-                    <div class="card-body">
-                        <figure class="avatar mr-2 avatar-xl" data-initial="UM"></figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div><!-- End Container-->
+        <div class="section-body"></div>
+    </section>
+@endsection
+
+@section('sidebar')
+    @parent
+    <li class="nav-item dropdown">
+        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+            <span>Layout</span></a>
+        <ul class="dropdown-menu">
+            <li><a class="nav-link" href="layout-default.html">Default Layout</a></li>
+            <li><a class="nav-link" href="layout-transparent.html">Transparent Sidebar</a></li>
+            <li><a class="nav-link" href="layout-top-navigation.html">Top Navigation</a></li>
+        </ul>
+    </li>
 @endsection
