@@ -99,7 +99,7 @@
                 <img src="{{ asset('assets/img/home.png') }}" alt="" class="animated">
             </div>
             <img src="{{ asset('assets/img/layer.png') }}" alt=""
-                class="accsent-img h-100 position-absolute top-0 start-0">
+                class="accsent-img h-97 position-absolute top-0 start-0">
 
         </div>
         <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
