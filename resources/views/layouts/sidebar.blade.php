@@ -2,7 +2,8 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo" srcset="" /></a>
+                <a href="index.html"><img src="{{ asset('assets/images/logo/logo.svg') }}" alt="Logo"
+                        srcset="" /></a>
             </div>
             <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -43,7 +44,7 @@
             <li class="sidebar-title">Menu</li>
 
             <li class="sidebar-item">
-                <a href="index.html" class="sidebar-link">
+                <a href="{{ route('dashboard.home') }}" class="sidebar-link">
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>
@@ -52,23 +53,20 @@
             <li class="sidebar-item has-sub">
                 <a href="#" class="sidebar-link">
                     <i class="bi bi-collection-fill"></i>
-                    <span>Extra Components</span>
+                    <span>Table Data</span>
                 </a>
                 <ul class="submenu">
                     <li class="submenu-item">
-                        <a href="extra-component-avatar.html">Avatar</a>
+                        <a href="{{ route('dashboard.rooms') }}">Room</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="extra-component-sweetalert.html">Sweet Alert</a>
+                        <a href="{{ route('dashboard.members') }}">Member</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="extra-component-toastify.html">Toastify</a>
+                        <a href="{{ route('dashboard.transaction') }}">Trasaction</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="extra-component-rating.html">Rating</a>
-                    </li>
-                    <li class="submenu-item">
-                        <a href="extra-component-divider.html">Divider</a>
+                        <a href="{{ route('dashboard.users') }}">User</a>
                     </li>
                 </ul>
             </li>
@@ -96,8 +94,6 @@
                     </li>
                 </ul>
             </li>
-
-            <li class="sidebar-title">Forms &amp; Tables</li>
         </ul>
     </div>
 </div>
