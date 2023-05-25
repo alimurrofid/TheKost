@@ -42,7 +42,8 @@
                                     "Welcome to our web page showcasing the user data of our boarding house, where comfort
                                     and convenience come together in one place."
                                 </p>
-                                <a href="#" class="btn icon icon-left btn-primary"><i data-feather="edit"></i>
+                                <a href="{{ route('form.user') }}" class="btn icon icon-left btn-primary"><i
+                                        data-feather="edit"></i>
                                     Add Data</a>
                             </div>
 

@@ -44,3 +44,21 @@ Route::prefix('dashboard')->group (function () {
     })->name('dashboard.users');
 
 });
+
+Route::prefix('form')->group (function () {
+    Route::get('/room', function () {
+        return view('form.form-room');
+    })->name('form.room');
+
+    Route::get('/member', function () {
+        return view('form.form-member');
+    })->name('form.member');
+
+    Route::get('/transaction', function () {
+        return view('form.form-transaction');
+    })->name('form.transaction');
+
+    Route::get('/user', function () {
+        return view('form.form-user');
+    })->name('form.user');
+});
