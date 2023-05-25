@@ -2,65 +2,81 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>@yield('title') - Starter Template</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@yield('title') - The Kost</title>
 
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
-    <!-- CSS Libraries -->
-    @stack('custom-css')
-
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('assets/css/stylestisla.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/main/app.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset(asset('assets/css/main/bootstrap.css')) }}" /> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/main/app-dark.css') }}" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.svg') }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png') }}" type="image/png" />
 </head>
 
 <body>
     <div id="app">
-        <div class="main-wrapper">
-            <div class="navbar-bg"></div>
-            <nav class="navbar navbar-expand-lg main-navbar">
-                @include('layouts.navbar')
-            </nav>
-            <div class="main-sidebar sidebar-style-2">
-                @include('layouts.sidebar')
-            </div>
+        <div id="sidebar" class="active">
+            @include('layouts.sidebar')
+        </div>
 
-            <!-- Main Content -->
-            <div class="main-content">
+        <div id="main" class="layout-navbar">
+            <header class="mb-3">
+                @include('layouts.navbar')
+            </header>
+            <div id="main-content">
                 @yield('content')
+                {{-- <div class="page-heading">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-12 col-md-6 order-md-1 order-last">
+                                <h3>Vertical Layout with Navbar</h3>
+                                <p class="text-subtitle text-muted">
+                                    Navbar will appear on the top of the
+                                    page.
+                                </p>
+                            </div>
+                            <div class="col-12 col-md-6 order-md-2 order-first">
+                                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">Dashboard</a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Layout Vertical Navbar
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Example Content</h4>
+                            </div>
+                            <div class="card-body">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Consectetur quas omnis
+                                laudantium tempore exercitationem, expedita
+                                aspernatur sed officia asperiores unde
+                                tempora maxime odio reprehenderit distinctio
+                                incidunt! Vel aspernatur dicta consequatur!
+                            </div>
+                        </div>
+                    </section>
+                </div> --}}
+
+                <footer>
+                    @include('layouts.footer')
+                </footer>
             </div>
-            <footer class="main-footer">
-                @include('layouts.footer')
-            </footer>
         </div>
     </div>
-
-    <!-- General JS Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="{{ asset('assets/js/stisla.js') }}"></script>
-
-    <!-- JS Libraies -->
-    @stack('custom-js')
-
-    <!-- Template JS File -->
-    <script src="{{ asset('assets/js/scripts.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-
-    <!-- Page Specific JS File -->
+    {{-- <script src="assets/js/bootstrap.js"></script> --}}
+    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
+    {{-- <script src="assets/js/app.js"></script> --}}
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 </body>
 
 </html>

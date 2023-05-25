@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    // return view('layout.vertical-navbar');
+    return view('layout.app');
 });
 
 // Route::get('/dashboard', function () {

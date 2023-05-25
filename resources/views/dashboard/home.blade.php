@@ -3,83 +3,99 @@
 @section('title', 'Homepage')
 
 @section('content')
-    <section class="section">
-        <div class="section-header">
-            <h1>Homepage</h1>
-        </div>
-
-        <div class="section-body">
-            <p class="section-lead">
-                Selamat datang di halaman dashboard kost kami.
-            </p>
-            <div class="row">
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1">
-                        <a href="{{ route('dashboard.rooms') }}">
-                            <div class="card-icon bg-danger">
-                                <i class="far fa-newspaper"></i>
-                            </div>
-                        </a>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Rooms</h4>
-                            </div>
-                            <div class="card-body">
-                                42
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-primary">
-                            <i class="far fa-user"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Total Members</h4>
-                            </div>
-                            <div class="card-body">
-                                10
+    <div class="page-heading">
+        <h3>Data Statistics The Kost</h3>
+    </div>
+    <div class="page-content">
+        <section class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                        <div class="stats-icon purple mb-2">
+                                            <i class="iconly-boldShow"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">
+                                            Rooms Data
+                                        </h6>
+                                        <h6 class="font-extrabold mb-0">
+                                            21 Rooms
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-warning">
-                            <i class="far fa-file"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Reports Transaction</h4>
-                            </div>
-                            <div class="card-body">
-                                52
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                        <div class="stats-icon blue mb-2">
+                                            <i class="iconly-boldProfile"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">
+                                            Members Data
+                                        </h6>
+                                        <h6 class="font-extrabold mb-0">
+                                            15 Members
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-success">
-                            <i class="fas fa-angry"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Users</h4>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                        <div class="stats-icon green mb-2">
+                                            <i class="iconly-boldAdd-User"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">
+                                            Deals Data
+                                        </h6>
+                                        <h6 class="font-extrabold mb-0">
+                                            112 Deals
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                12
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 col-md-6">
+                        <div class="card">
+                            <div class="card-body px-4 py-4-5">
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
+                                        <div class="stats-icon red mb-2">
+                                            <i class="iconly-boldBookmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
+                                        <h6 class="text-muted font-semibold">
+                                            Users Data
+                                        </h6>
+                                        <h6 class="font-extrabold mb-0">
+                                            17 Users
+                                        </h6>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 @endsection
