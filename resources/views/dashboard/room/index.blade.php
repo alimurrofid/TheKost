@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Members')
+@section('title', 'Rooms')
 
 @section('content')
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Data Members</h3>
+                    <h3>Data Rooms</h3>
                     <p class="text-subtitle text-muted">
                         Who does not love The Kost
                     </p>
@@ -33,17 +33,17 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">
-                                Table Data Members
+                                Table Data Rooms
                             </h4>
                         </div>
                         <div class="card-content">
                             <div class="card-body">
                                 <p>
-                                    "Welcome to our web page showcasing the member data of our boarding house, where comfort
+                                    "Welcome to our web page showcasing the room data of our boarding house, where comfort
                                     and convenience come together in one place."
                                 </p>
-                                <a href="{{ route('form.member') }}" class="btn icon icon-left btn-primary"><i
-                                        data-feather="edit"></i>
+                                <a href="" class="btn icon icon-left btn-primary"><i
+                                        data-feather="user-plus"></i>
                                     Add Data</a>
                             </div>
 
@@ -52,52 +52,38 @@
                                 <table class="table mb-0">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>No.</th>
+                                            <th>Rooms Number</th>
                                             <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($rooms as $room)
+                                            
                                         <tr>
                                             <td class="text-bold-500">
-                                                1
+                                                {{ $room->room_number }}
                                             </td>
                                             <td class="text-bold-500">
-                                                Michael Right
+                                                {!! $room->dormitory->name ?? '<b class="text-danger">-</b>' !!}
+
                                             </td>
-                                            <td class="text-bold-500">Alaska</td>
-                                            <td class="text-bold-500">089998777622</td>
                                             <td>
                                                 <a href="#" class="btn icon btn-primary" title="Detail"><i
-                                                        class="bi bi-pencil"></i></a>
+                                                        class="bi bi-eye"></i></a>
                                                 <a href="#" class="btn icon btn-warning" title="Edit"><i
-                                                        class="bi bi-exclamation-triangle"></i></a>
+                                                        class="bi bi-pencil-square"></i></a>
                                                 <a href="#" class="btn icon btn-danger" title="Delete"><i
                                                         class="bi bi-trash"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="text-bold-500">
-                                                1
-                                            </td>
-                                            <td class="text-bold-500">
-                                                Michael Right
-                                            </td>
-                                            <td class="text-bold-500">Alaska</td>
-                                            <td class="text-bold-500">089998777622</td>
-                                            <td>
-                                                <a href="#" class="btn icon btn-primary" title="Detail"><i
-                                                        class="bi bi-pencil"></i></a>
-                                                <a href="#" class="btn icon btn-warning" title="Edit"><i
-                                                        class="bi bi-exclamation-triangle"></i></a>
-                                                <a href="#" class="btn icon btn-danger" title="Delete"><i
-                                                        class="bi bi-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
+                                        
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="m-3">
+                                {{ $rooms->links() }}
                             </div>
                         </div>
                     </div>

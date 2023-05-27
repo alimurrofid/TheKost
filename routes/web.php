@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\DormitoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('layout.vertical-navbar');
-    return view('layout.app');
+    return view('auth.login');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard.home');
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard.home');
+});
 
 Route::prefix('dashboard')->group (function () {
     Route::get('/', function () {
@@ -62,3 +64,6 @@ Route::prefix('form')->group (function () {
         return view('form.form-user');
     })->name('form.user');
 });
+
+Route::resource('/dashboard/room', RoomController::class);
+Route::resource('/dashboard/dormitory', DormitoryController::class);
