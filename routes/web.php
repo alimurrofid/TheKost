@@ -24,7 +24,7 @@ Route::get('/dashboard', function () {
     return view('dashboard.home');
 });
 
-Route::prefix('dashboard')->group (function () {
+Route::prefix('dashboard')->group(function () {
     Route::get('/', function () {
         return view('dashboard.home');
     })->name('dashboard.home');
@@ -44,10 +44,9 @@ Route::prefix('dashboard')->group (function () {
     Route::get('/users', function () {
         return view('dashboard.users');
     })->name('dashboard.users');
-
 });
 
-Route::prefix('form')->group (function () {
+Route::prefix('form')->group(function () {
     Route::get('/room', function () {
         return view('form.form-room');
     })->name('form.room');
@@ -65,5 +64,9 @@ Route::prefix('form')->group (function () {
     })->name('form.user');
 });
 
-Route::resource('/dashboard/room', RoomController::class);
-Route::resource('/dashboard/dormitory', DormitoryController::class);
+
+
+// Route::middleware(['auth'])->group(function () {
+    Route::resource('/dashboard/room', RoomController::class);
+    Route::resource('/dashboard/dormitory', DormitoryController::class);
+// });

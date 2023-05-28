@@ -1,58 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.authorisation')
+@section('title','login')
+@section('content')
+<div class="auth-logo">
+    <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo"></a>
+</div>
+<h1 class="auth-title">Log in.</h1>
+<p class="auth-subtitle mb-5">Log in with your data that you entered during registration.</p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login & Register Form</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ asset('style/loginstyle.css') }}" />
-    <link rel="shortcut icon" href="{{ asset('/assets/img/favicon.ico') }}" type="image/x-icon">
-</head>
-
-<body>
-    <div class="container" id="container">
-        <div class="form-container sign-in-container">
-            <form action="" method="post">
-                @csrf
-                <h1>Sign In</h1>
-                <div class="social-container">
-                    <a onclick="alert('Belum berfungsi')" class="social"><em class="fa fa-facebook"></em></a>
-                    <a onclick="alert('Belum berfungsi')" class="social"><em class="fa fa-google"></em></a>
-                    <a onclick="alert('Belum berfungsi')" class="social"><em class="fa fa-linkedin"></em></a>
-                </div>
-                <span>Form Login</span>
-                <input type="text" name="username" placeholder="Username" required />
-                <input type="password" name="password" placeholder="Password" required />
-                {{-- @if (session()->has('loginError'))
-                    <p class="message-error">{{ session('loginError') }}</p>
-                @endif --}}
-                <a style="cursor: pointer;" onclick="alert('Belum Berfungsi')">Lupa password</a>
-                <div class="button-form">
-                    <a href="{{ url('/') }}" class="button-back">
-                        <button class="danger" type="button" id="signUp">Kembali</button>
-                    </a>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
+<form action="{{route('login')}}" method="POST">
+    @csrf
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{-- <input type="text" class="form-control form-control-xl" placeholder="Username"> --}}
+        <div class="form-control-icon">
+            <i class="bi bi-person"></i>
         </div>
-        <div class="overlay-container">
-            <div class="overlay">
-                <div class="overlay-panel overlay-right">
-                    <h1>Tips</h1>
-                    <p>Jangan beritahukan data pribadi anda, termasuk username dan password saat menggunakan semua
-                        sistem informasi</p>
-                    <a href="{{ url('/') }}">
-                        <button class="ghost" id="signUp">Kembali</button>
-                    </a>
-                </div>
-            </div>
+        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1" autofocus>
+        @error('email')
+        <div class="invalid-feedback">
+            {{$message}}
         </div>
+        @enderror
+        
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-</body>
-
-</html>
+    <div class="form-group position-relative has-icon-left mb-4">
+        {{-- <input type="password" class="form-control form-control-xl" placeholder="Password"> --}}
+        <div class="form-control-icon">
+            <i class="bi bi-shield-lock"></i>
+        </div>
+        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" tabindex="2">
+        @error('password')
+        <div class="invalid-feedback">
+                {{$message}}
+            </div>
+        @enderror
+    </div>
+    <div class="form-check form-check-lg d-flex align-items-end">
+        <input class="form-check-input me-2" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label text-gray-600" for="flexCheckDefault">
+            Keep me logged in
+        </label>
+    </div>
+    <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
+</form>
+<div class="text-center mt-5 text-lg fs-4">
+    <p class="text-gray-600">Don't have an account? <a href="auth-register.html" class="font-bold">Sign
+            up</a>.</p>
+    <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p>
+</div>
+@endsection

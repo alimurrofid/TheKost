@@ -42,7 +42,7 @@
                                     "Welcome to our web page showcasing the room data of our boarding house, where comfort
                                     and convenience come together in one place."
                                 </p>
-                                <a href="" class="btn icon icon-left btn-primary"><i
+                                <a href="{{ route($rooms_route["create"]) }}" class="btn icon icon-left btn-primary"><i
                                         data-feather="user-plus"></i>
                                     Add Data</a>
                             </div>

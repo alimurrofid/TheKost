@@ -13,14 +13,14 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light">
+    {{-- <nav class="navbar navbar-light">
         <div class="container d-block">
             <a href="{{ route('dashboard.home') }}"><i class="bi bi-chevron-left"></i></a>
             <a class="navbar-brand ms-4" href="{{ route('dashboard.home') }}">
                 <img src="{{ asset('assets/images/logo/logo.svg') }}">
             </a>
         </div>
-    </nav>
+    </nav> --}}
 
 
     <div class="container">

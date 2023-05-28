@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Dormitory;
 use App\Http\Requests\StoreDormitoryRequest;
 use App\Http\Requests\UpdateDormitoryRequest;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DormitoryController extends Controller
 {
@@ -48,15 +50,38 @@ class DormitoryController extends Controller
      */
     public function create()
     {
-        //
+        return view(DormitoryController::DORMITORY_VIEW["create"], [
+            'title' => 'Tambah Penghuni',
+            'dormitory_route' => DormitoryController::DORMITORY_ROUTE
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDormitoryRequest $request)
+    public function store(Request $request)
     {
-        //
+        $rulesData = [
+            'name' => 'required|unique:dormitories',
+            'address' => 'required',
+            'phone_number' => 'required|unique:dormitories|numeric|digits_between:11,13',
+            'checkin_date' => 'required|date',
+        ];
+
+        if ($request->file("image")) {
+            $rulesData["image"] = "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048";
+        }
+        
+        $validatedData = $request->validate($rulesData);
+
+        if ($validatedData["image"]) {
+            $file = $request->file('image')->store('dormitory-images', 'public');
+            $validatedData["image"] = $file;
+        }
+
+        Dormitory::create($validatedData);
+        
+        return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil ditambahkan');
     }
 
     /**
