@@ -36,6 +36,18 @@
                                 Table Data Rooms
                             </h4>
                         </div>
+                            
+                            {{-- alert succes --}}
+                            @if (session()->has("success")) 
+                            <div class="col-md-5 p-0">  
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session("success") }}
+                                    <button type="button" class="btn-close py-0 py-3" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                            </div>
+                        @endif
+                        {{-- end alert succes --}}
+
                         <div class="card-content">
                             <div class="card-body">
                                 <p>
@@ -69,12 +81,18 @@
 
                                             </td>
                                             <td>
-                                                <a href="#" class="btn icon btn-primary" title="Detail"><i
+                                                <a href="{{ route($rooms_route["show"], $room->id) }}" class="btn icon btn-primary" title="Detail"><i
                                                         class="bi bi-eye"></i></a>
-                                                <a href="#" class="btn icon btn-warning" title="Edit"><i
+                                                <a href="{{ route($rooms_route["edit"], $room->id) }}" class="btn icon btn-warning" title="Edit"><i
                                                         class="bi bi-pencil-square"></i></a>
-                                                <a href="#" class="btn icon btn-danger" title="Delete"><i
-                                                        class="bi bi-trash"></i></a>
+                                               
+
+                                                        <form action="{{ route($rooms_route["delete"], $room->id) }}" class="d-inline" method="post">
+                                                            @csrf
+                                                            @method("delete")
+                                                            <button onclick="return confirm('Konfirmasi hapus data ?')"  class="btn icon btn-danger" title="Delete"><i
+                                                                class="bi bi-trash"></i></button>
+                                                        </form>
                                             </td>
                                         </tr>
                                         @endforeach

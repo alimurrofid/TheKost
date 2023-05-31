@@ -208,5 +208,16 @@ class DatabaseSeeder extends Seeder
                 "fk_id_room" => 1,
             ],
         ]);
+
+        DB::table('kind_payment_logs')->insert([
+            [
+                "name" => "Transfer",
+                "need_image" => TRUE,
+            ],
+            [
+                "name" => "Cash",
+                "need_image" => FALSE
+            ],
+        ]);
     }
 }

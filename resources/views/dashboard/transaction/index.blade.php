@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Members')
+@section('title', 'Transaction')
 
 @section('content')
     <div class="page-heading">
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Data Members</h3>
+                    <h3>Data Transaction</h3>
                     <p class="text-subtitle text-muted">
                         Who does not love The Kost
                     </p>
@@ -33,27 +33,30 @@
                     <div class="card">
                         <div class="card-header">
                             <h4 class="card-title">
-                                Table Data Members
+                                Table Data Transactions
                             </h4>
                         </div>
 
                         {{-- alert succes --}}
-                        @if (session()->has("success")) 
-                        <div class="col-md-5 p-0">  
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session("success") }}
-                                <button type="button" class="btn-close py-0 py-3" data-bs-dismiss="alert" aria-label="Close"></button>
+                        @if (session()->has('success'))
+                            <div class="col-md-5 p-0">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close py-0 py-3" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
                             </div>
-                        </div>
-                    @endif  
-                    {{-- end alert succes --}}
+                        @endif
+                        {{-- end alert succes --}}
+
                         <div class="card-content">
                             <div class="card-body">
                                 <p>
-                                    "Welcome to our web page showcasing the member data of our boarding house, where comfort
-                                    and convenience come together in one place."
+                                    "Welcome to our web page showcasing the transactions data of our boarding house, where
+                                    comfort and convenience come together in one place."
                                 </p>
-                                <a href="{{route($dormitory_route["create"])}}" class="btn icon icon-left btn-primary"><i data-feather="user-plus"></i>
+                                <a href="{{ route($transactions_route['create']) }}"
+                                    class="btn icon icon-left btn-primary"><i data-feather="user-plus"></i>
                                     Add Data</a>
                             </div>
 
@@ -62,35 +65,36 @@
                                 <table class="table mb-0">
                                     <thead class="thead-dark">
                                         <tr>
-                                            <th>No.</th>
-                                            <th>Name</th>
-                                            <th>Address</th>
-                                            <th>Number</th>
+                                            <th>Date</th>
+                                            <th>Number Rooms & Name Members</th>
+                                            <th>Total Payment</th>
+                                            <th>Month</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($dormitories as $dormitory)
+                                        @foreach ($transactions as $transaction)
                                             <tr>
                                                 <td class="text-bold-500">
+                                                    {{ $transaction->date_payment }}
+                                                </td>
+                                                <td class="text-bold-500">{{ $transaction->dormitory->name }} (Kamar
+                                                    {{ $transaction->dormitory->rooms[0]->room_number }})</td>
 
-                                                    {{ $loop->iteration }}
+
+                                                <td class="text-bold-500">{{ $transaction->total_month }} Month</td>
+                                                <td class="text-bold-500"><span
+                                                        class="text-nowrap">{{ $transaction->from }}</span>
+                                                    <div>-</div> <span class="text-nowrap">{{ $transaction->to }}</span>
                                                 </td>
-                                                <td class="text-bold-500">
-                                                    {{ $dormitory->name }}
-                                                </td>
-                                                <td class="text-bold-500">{{ $dormitory->address }}</td>
-                                                <td class="text-bold-500">{{ $dormitory->phone_number }}</td>
+
+
                                                 <td>
-                                                    <a href="{{ route($dormitory_route['show'], $dormitory->id) }}"
+                                                    <a href="{{ route($transactions_route['show'], $transaction->id) }}"
                                                         class="btn icon btn-primary" title="Detail"><i
                                                             class="bi bi-eye"></i></a>
-                                                    <a href="{{ route($dormitory_route['edit'], $dormitory->id) }}"
-                                                        class="btn icon btn-warning" title="Edit"><i
-                                                            class="bi bi-pencil-square"></i></a>
-                                                    {{-- <a href="" class="btn icon btn-danger" title="Delete"><i
-                                                            class="bi bi-trash"></i></a> --}}
-                                                            <form action="{{ route($dormitory_route["delete"], $dormitory->id) }}" class="d-inline" method="post">
+
+                                                            <form action="{{ route($transactions_route["delete"], $transaction->id) }}" class="d-inline" method="post">
                                                                 @csrf
                                                                 @method("delete")
                                                                 <button onclick="return confirm('Konfirmasi hapus data ?')" class="btn icon btn-danger" title="Delete"><i
@@ -100,14 +104,8 @@
                                             </tr>
                                         @endforeach
 
-
                                     </tbody>
                                 </table>
-
-                            </div>
-                            {{-- pagination --}}
-                            <div class="m-3">
-                                {{ $dormitories->links() }}
                             </div>
                         </div>
                     </div>

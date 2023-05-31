@@ -118,7 +118,11 @@ class RoomController extends Controller
      */
     public function show(Room $room)
     {
-        //
+        return view(RoomController::ROOM_VIEW["detail"], [
+            'title' => "Detail Kamar $room->name",
+            'room' => $room,
+            'rooms_route' => RoomController::ROOM_ROUTE,
+        ]);
     }
 
     /**
@@ -126,15 +130,50 @@ class RoomController extends Controller
      */
     public function edit(Room $room)
     {
-        //
+        return view(RoomController::ROOM_VIEW["edit"], [
+            'title' => "Edit Kamar $room->name",
+            'room' => $room,
+            'dormitories' => Dormitory::all(),
+            'rooms_route' => RoomController::ROOM_ROUTE,
+            'room_images' => RoomImage::where("fk_id_room", $room->id)->get(),
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoomRequest $request, Room $room)
+    public function update(Request $request, Room $room)
     {
-        //
+        $rulesData = [
+            'fk_id_dormitory' => 'required|unique:rooms,fk_id_dormitory,' . $room->id,
+            'room_number' => 'required|integer|min:0|unique:rooms,room_number,' . $room->id,
+        ];
+
+        $validatedData = $request->validate($rulesData);
+
+        if ($validatedData["fk_id_dormitory"] == 0) {
+            $validatedData["fk_id_dormitory"] = null;
+        }
+
+        if ($request->file('image')) {
+            $rulesDataImage = [
+                'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            ];
+    
+            $validator = Validator::make($request->all(), $rulesDataImage);
+            $validatedDataImage = $validator->validated();
+
+            $file = $request->file('image')->store('room-images', 'public');
+    
+            $validatedDataImage["image"] = $file;
+            $validatedDataImage["fk_id_room"] = $room->id;
+            RoomImage::create($validatedDataImage);
+        }
+        
+        Room::where("id", $room->id)->update($validatedData);
+
+
+        return redirect()->route(RoomController::ROOM_ROUTE["index"])->with('success', 'Data Kamar berhasil diedit');
     }
 
     /**
@@ -142,6 +181,8 @@ class RoomController extends Controller
      */
     public function destroy(Room $room)
     {
-        //
+        
+        Room::find($room->id)->delete();
+        return redirect()->route(RoomController::ROOM_ROUTE["index"])->with('success', 'Data Kamar berhasil dihapus');
     }
 }

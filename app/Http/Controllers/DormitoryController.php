@@ -7,6 +7,7 @@ use App\Http\Requests\StoreDormitoryRequest;
 use App\Http\Requests\UpdateDormitoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class DormitoryController extends Controller
 {
@@ -66,6 +67,7 @@ class DormitoryController extends Controller
             'address' => 'required',
             'phone_number' => 'required|unique:dormitories|numeric|digits_between:11,13',
             'checkin_date' => 'required|date',
+            
         ];
 
         if ($request->file("image")) {
@@ -89,7 +91,17 @@ class DormitoryController extends Controller
      */
     public function show(Dormitory $dormitory)
     {
-        //
+        $date_start_checkin = null;
+        if ($dormitory->checkin_date) {
+            $date_start_checkin = getdate(strtotime($dormitory->checkin_date));
+        }
+        return view(DormitoryController::DORMITORY_VIEW["detail"], [
+            'title' => "Detail Penghuni $dormitory->name",
+            'dormitory' => $dormitory,
+            'year_checkin'=> $date_start_checkin["year"],
+            'max_year' => config("app.max_year"),
+            'dormitory_route' => DormitoryController::DORMITORY_ROUTE,
+        ]);
     }
 
     /**
@@ -97,22 +109,51 @@ class DormitoryController extends Controller
      */
     public function edit(Dormitory $dormitory)
     {
-        //
+        return view(DormitoryController::DORMITORY_VIEW["edit"], [
+            'title' => 'Edit Data Penghuni',
+            'dormitory' => $dormitory,
+            'dormitory_route' => DormitoryController::DORMITORY_ROUTE
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDormitoryRequest $request, Dormitory $dormitory)
+    public function update(Request $request, Dormitory $dormitory)
     {
-        //
+        $rulesData = [
+            'name' => 'required|unique:dormitories,name,'.$dormitory->id,
+            'address' => 'required',
+            'phone_number' => 'required|numeric|digits_between:11,13|unique:dormitories,phone_number,'.$dormitory->id ,
+            'checkin_date' => 'required|date',
+        ];
+
+        if ($request->file("image")) {
+            $rulesData["image"] = "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048";
+        }
+
+        $validatedData = $request->validate($rulesData);
+
+        if ($request->file("image")) {
+            if ($dormitory->image) {
+                Storage::disk('public')->delete($dormitory->image);
+            }
+            $validatedData["image"] = $request->file('image')->store('dormitory-images', 'public');
+        } else {
+            $validatedData["image"] = $dormitory->image;
+        }
+
+        Dormitory::with(["rooms"])->where("id", $dormitory->id)->update($validatedData);
+        return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil diedit');
     }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Dormitory $dormitory)
     {
-        //
+        Dormitory::with(["rooms"])->find($dormitory->id)->delete();
+        return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil dihapus');
     }
 }
