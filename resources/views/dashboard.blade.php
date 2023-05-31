@@ -30,78 +30,81 @@
     <!-- CSS Style -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
+    <link rel="icon" href="{{ asset('assets/img/logo-1.png') }} " type="image/x-icon" />
     <title>The Kost</title>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-fixed w-100">
+    <nav id="header" class="navbar navbar-expand-lg navbar-dark navbar-transparent position-fixed w-100">
         <div class="container">
-            <a href="#">
+            <a href="#home">
                 <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
             </a>
-            {{-- <a class="navbar-brand ms-3" href="#">The Kost</a> --}}
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
+                aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mx-auto py-3">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                        <a class="nav-link scrollto active" href="#hero">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ABOUT</a>
+                        <a class="nav-link scrollto" href="#about">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">FACILITY</a>
+                        <a class="nav-link scrollto" href="#facility">FACILITY</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">GALERY</a>
+                        <a class="nav-link scrollto" href="#gallery">GALERY</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">PRICE</a>
+                        <a class="nav-link scrollto" href="#pricing">PRICE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DATA</a>
+                        <a class="nav-link scrollto" href="#">DATA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CONTACT</a>
+                        <a class="nav-link scrollto" href="#contact">CONTACT</a>
                     </li>
                 </ul>
                 <div>
-                    {{-- <a href="#" class="btn btn-secondary">SIGN UP</a> --}}
                     <a href="#" class="btn btn-primary">LOGIN</a>
                 </div>
             </div>
         </div>
     </nav>
+    <!-- End Navbar -->
 
     <!-- home section -->
-    <section id="home">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-md-6 my-auto home-tagline" data-aos="zoom-out">
-                    <h1>Cari Kos Sambil Rebahan
-                        Dengan <span>The Kost.</span></h1>
-                    <p><span class="fw-bold">Cari kosan</span> yang aman, tenang, dan terjangkau? Kami punya
-                        solusinya! Kosan kami memiliki lingkungan yang aman dan
-                        tenang untuk Anda tinggali.</p>
+    <section id="hero">
 
-                    <button class="button-lg-primary">For more information</button>
-                    <a href="#">
-                        <img src="{{ asset('assets/img/arrow-right.png') }}" alt="">
-                    </a>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-7 pt-5 pt-lg-0 order-2 order-lg-1 d-flex align-items-center">
+                    <div data-aos="zoom-out">
+                        <h1>Cari Kos Sambil Rebahan
+                            Dengan <span>The Kost.</span></h1>
+                        <h2><span class="fw-bold">Cari kosan</span> yang aman, tenang, dan terjangkau? Kami punya
+                            solusinya! Kosan kami memiliki lingkungan yang aman dan
+                            tenang untuk Anda tinggali.</h2>
+                        <div class="text-center text-lg-start">
+                            <button class="btn-get-started scrollto">For more information</button>
+                            <a href="#about">
+                                <img src="{{ asset('assets/img/arrow-right.png') }}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+                    <img src="{{ asset('assets/img/house3.svg') }}" class="img-fluid animated" alt="">
                 </div>
             </div>
-
-            <div class="home-img" data-aos="zoom-out" data-aos-delay="300">
-                <img src="{{ asset('assets/img/home.png') }}" alt="" class="animated">
-            </div>
             <img src="{{ asset('assets/img/layer.png') }}" alt=""
-                class="accsent-img h-97 position-absolute top-0 start-0">
-
+                class="accsent-img h-100 position-absolute top-0 start-0">
         </div>
+
         <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             viewBox="0 24 150 28 " preserveAspectRatio="none">
             <defs>
@@ -117,7 +120,9 @@
                 <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
             </g>
         </svg>
+
     </section>
+    <!-- End Hero -->
 
     <!-- about section -->
     <section id="about" class="about">
@@ -163,15 +168,15 @@
     </section>
 
     <!-- facility section -->
-    <section id="facility" class="mt-5 overflow-hidden">
+    <section id="facility" class="overflow-hidden">
         <div class="container position-relative">
             <div class="row mb-5" data-aos="zoom-out">
-                <div class="col-9">
-                    <div class="facility-section-title" data-aos="fade-up">
+                <div class="col-lg-9 col-md-12">
+                    <div class="section-title" data-aos="fade-up">
                         <h5>Facility -<span>Some Facility from Our Kost</span></h5>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-lg-3 col-md-12">
                     <button class="facility-button">Lihat Semua..
                         <img src="{{ asset('assets/img/arrow_fcty.png') }}" alt="" class="ms-2">
                     </button>
@@ -358,7 +363,7 @@
             </div>
 
             <div class="row p-0 m-0" data-aos="fade-left">
-                <div class="col">
+                <div class="col-md-4">
                     <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                         <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
                             <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
@@ -366,7 +371,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                         <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
                             <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
@@ -374,7 +379,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-md-4">
                     <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
                         <a href="{{ asset('assets/img/glr-2.png') }}" class="gallery-lightbox">
                             <img src="{{ asset('assets/img/glr-2.png') }}" alt="" class="w-100 h-100"
@@ -454,11 +459,11 @@
                         </div>
 
                         <h6>Social Media</h6>
-                        <a href="#" class="me-3"><img src="{{ asset('assets/img/fb.png') }}"
+                        <a href="#" class="me-lg-3 me-1"><img src="{{ asset('assets/img/fb.png') }}"
                                 alt=""></a>
-                        <a href="#" class="me-3"><img src="{{ asset('assets/img/tw.png') }}"
+                        <a href="#" class="me-lg-3 me-1"><img src="{{ asset('assets/img/tw.png') }}"
                                 alt=""></a>
-                        <a href="#" class="me-3"><img src="{{ asset('assets/img/ig.png') }}"
+                        <a href="#" class="me-lg-3 me-1"><img src="{{ asset('assets/img/ig.png') }}"
                                 alt=""></a>
                         <a href="#" class="thekost">The Kost</a>
                     </div>
@@ -474,9 +479,9 @@
                                         disini...</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingInput"
+                                    <input type="text" class="form-control" id="Input"
                                         placeholder="name@example.com">
-                                    <label for="floatingInput" class="d-flex align-items-center">Pertanyaan
+                                    <label for="Input" class="d-flex align-items-center">Pertanyaan
                                         Anda..</label>
                                 </div>
 
@@ -492,51 +497,36 @@
 
     <!-- ======= Footer ======= -->
     <footer class="d-flex align-items-center position-relative">
-        <div class="container-fluid">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 d-flex align-items-center">
-                        <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
-                        <a href="#" class="ms-2">The Kost</a>
-                    </div>
-                    <div class="col-md-6 d-flex justify-content-evenly">
-                        <a href="#home">HOME</a>
-                        <a href="#about">ABOUT</a>
-                        <a href="#preview">FACILITY</a>
-                        <a href="#pricing">GALERY</a>
-                        <a href="#">DATA</a>
-                        <a href="#contact">CONTACT</a>
-                        <a href="#">LOGIN</a>
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-center justify-content-lg-start justify-content-center">
+                    <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
+                    <a href="#" class="ms-2">The Kost</a>
                 </div>
-                <div class="row position-absolute copyright start-50 translate-middle">
-                    <div class="col-md-12 ">
-                        <p>© 2023 The Kost. All rights reserved</p>
-                    </div>
+                <div class="col-md-8 d-flex align-items-center justify-content-evenly justify-content-center">
+                    <a href="#home">HOME</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#preview">FACILITY</a>
+                    <a href="#pricing">GALERY</a>
+                    <a href="#">DATA</a>
+                    <a href="#contact">CONTACT</a>
+                    <a href="#">LOGIN</a>
+                </div>
+            </div>
+            <div class="row position-absolute copyright start-50 translate-middle">
+                <div class="col-md-12 ">
+                    <p class="text-center">© 2023 The Kost. All rights reserved</p>
                 </div>
             </div>
         </div>
     </footer>
     <!-- ======= End Footer ======= -->
 
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script> --}}
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-    -->
+    <!-- Back to top -->
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+    <div id="preloader"></div>
+    <!-- End Back to top -->
 
     <!-- Vendor JS Files -->
     <script src={{ asset('assets/vendor/purecounter/purecounter_vanilla.js') }}></script>

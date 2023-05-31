@@ -88,9 +88,9 @@
     if (selectHeader) {
         const headerScrolled = () => {
             if (window.scrollY > 100) {
-                selectHeader.classList.add("header-scrolled");
+                selectHeader.classList.add("navbar-scrolled");
             } else {
-                selectHeader.classList.remove("header-scrolled");
+                selectHeader.classList.remove("navbar-scrolled");
             }
         };
         window.addEventListener("load", headerScrolled);

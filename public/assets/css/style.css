@@ -6,11 +6,100 @@ body {
     font-family: "Poppins", sans-serif;
     background: #fff;
 }
+/* back to top button */
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: var(--pr--color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+
+.back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.back-to-top:hover {
+    background: #1315a2;
+    color: #fff;
+}
+
+.back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Preloader */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow: hidden;
+    background: #fff;
+}
+
+#preloader:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    border: 6px solid var(--pr--color);
+    border-top-color: #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: animate-preloader 1s linear infinite;
+    animation: animate-preloader 1s linear infinite;
+}
+
+@-webkit-keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-preloader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 /* navbar style */
 
-.navbar {
+#header {
     z-index: 3;
+}
+
+#header.navbar-transparent {
+    background: transparent;
+    box-shadow: none;
+}
+
+#header.navbar-scrolled {
+    background: var(--pr--color);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    height: 60px;
+    opacity: 0.9;
 }
 
 * {
@@ -61,37 +150,47 @@ body {
 .btn.btn-secondary:hover {
     opacity: 0.8;
 }
+
 /* end navbar style */
 
 /* Home style */
-
-#home {
-    height: 97vh;
+#hero {
+    min-height: 100vh;
     width: 100%;
-    background: linear-gradient(119.6deg, #023e8a 0%, #010222 160.61%);
+    /* background: url("../img/hero-bg.jpg"); */
+    background: url("../../assets/img/hero-bg.jpg");
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.home-img {
+#hero:before {
+    content: "";
+    background: linear-gradient(107.08deg, #02387d 0%, #030421 128.99%);
     position: absolute;
-    width: 608.72px;
-    height: 100%;
-    left: 50%;
-    top: -0.34px;
-    z-index: 1;
+    opacity: 0.97;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
-.home-tagline h1 {
-    color: #f6eded;
-    font-weight: bold;
-    font-size: 48px;
+#hero h1 {
+    margin: 0 0 20px 0;
+    font-size: 42px;
+    width: 80%;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 72px;
 }
 
-.home-tagline h1 span {
+#hero h1 span {
     color: #fff;
+    border-bottom: 4px solid var(--pr--color);
 }
 
-.home-tagline p {
+#hero h2 {
     font-size: 16px;
     color: #fff;
     margin-bottom: 60px;
@@ -100,7 +199,7 @@ body {
     width: 80%;
 }
 
-.button-lg-primary {
+#hero .btn-get-started {
     width: 237px;
     height: 70px;
     background-color: #fff;
@@ -110,7 +209,11 @@ body {
     font-weight: 700;
 }
 
-#home .animated {
+#hero .btn-get-started:hover {
+    opacity: 0.8;
+}
+
+#hero .animated {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
@@ -427,7 +530,7 @@ body {
 .section-title {
     margin-bottom: 30px;
 }
-.facility-section-title h5,
+
 .section-title h5 {
     color: var(--pr--color);
     font-size: 48px;
@@ -436,7 +539,6 @@ body {
     align-items: center;
 }
 
-.facility-section-title span,
 .section-title span {
     color: var(--pr--color);
     opacity: 70%;
@@ -669,3 +771,173 @@ footer a {
 }
 
 /* End Contact style */
+
+/* Responsive */
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    #hero {
+        text-align: center;
+    }
+
+    #hero .animated {
+        -webkit-animation: none;
+        animation: none;
+    }
+
+    #hero .hero-img {
+        text-align: center;
+    }
+
+    #hero .hero-img img {
+        max-width: 80%;
+    }
+
+    #hero h1 {
+        font-size: 38px;
+        line-height: 32px;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    #hero h2 {
+        width: 100%;
+        font-size: 16px;
+        line-height: 18px;
+        margin-bottom: 30px;
+    }
+
+    #hero .btn-get-started {
+        width: 180px;
+        height: 40px;
+        background-color: #fff;
+        color: var(--pr--color);
+        border: none;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .arrow-left {
+        width: 31px;
+        height: 31px;
+    }
+
+    .arrow-left img {
+        width: 8px;
+        height: auto;
+    }
+
+    .arrow-right img {
+        width: 8px;
+        height: auto;
+    }
+
+    .arrow-right {
+        width: 31px;
+        height: 31px;
+    }
+
+    .pricing h3 {
+        font-size: 20px;
+    }
+
+    .pricing h4 {
+        font-size: 28px;
+    }
+
+    #contact h3 {
+        color: #fff;
+        font-style: normal;
+        font-size: 38px;
+        font-weight: 600;
+        line-height: 60px;
+    }
+
+    #contact h6 {
+        margin: 14px 0 14px 0;
+    }
+
+    .info a {
+        font-size: 16px;
+        line-height: 18px;
+        margin-left: 16px;
+        width: auto;
+    }
+
+    .card-contact {
+        height: auto;
+        margin-top: 42px;
+    }
+
+    .card-contact h2 {
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 42px;
+    }
+
+    footer a {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* # Disable AOS delay on mobile */
+    [data-aos-delay] {
+        transition-delay: 0 !important;
+    }
+
+    .pricing h3 {
+        font-size: 26px;
+    }
+
+    .pricing h4 {
+        font-size: 36px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .home-img {
+        display: none;
+    }
+
+    #home {
+        height: 100vh;
+    }
+
+    .section-title h5 {
+        font-size: 26px;
+    }
+
+    .section-title span {
+        font-size: 18px;
+    }
+
+    .facility-button {
+        width: 100%;
+    }
+
+    footer a {
+        font-size: 12px;
+        line-height: 24px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .pricing h3 {
+        font-size: 18px;
+    }
+
+    .pricing h4 {
+        font-size: 28px;
+    }
+}
