@@ -114,100 +114,100 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 "room_number" => "3",
-                "fk_id_dormitory" => NULL,
+                "fk_id_dormitory" => 3,
             ],
             [
                 "room_number" => "4",
-                "fk_id_dormitory" => NULL,
+                "fk_id_dormitory" => 4,
             ],
             [
                 "room_number" => "5",
-                "fk_id_dormitory" => NULL,
+                "fk_id_dormitory" => 5,
             ],
-            [
-                "room_number" => "6",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "7",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "8",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "9",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "10",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "11",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "12",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "13",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "14",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "15",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "16",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "17",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "18",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "19",
-                "fk_id_dormitory" => NULL,
-            ],
-            [
-                "room_number" => "20",
-                "fk_id_dormitory" => NULL,
-            ],
+            // [
+            //     "room_number" => "6",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "7",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "8",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "9",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "10",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "11",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "12",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "13",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "14",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "15",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "16",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "17",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "18",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "19",
+            //     "fk_id_dormitory" => NULL,
+            // ],
+            // [
+            //     "room_number" => "20",
+            //     "fk_id_dormitory" => NULL,
+            // ],
         ]);
 
-        DB::table('room_images')->insert([
-            [
-                "image" => "room-images/1.png",
-                "fk_id_room" => 1
-            ],
-            [
-                "image" => "room-images/2.png",
-                "fk_id_room" => 1
-            ],
-            [
-                "image" => "room-images/3.png",
-                "fk_id_room" => 1,
-            ],
-            [
-                "image" => "room-images/4.png",
-                "fk_id_room" => 1,
-            ],
-            [
-                "image" => "room-images/5.png",
-                "fk_id_room" => 1,
-            ],
-        ]);
+        // DB::table('room_images')->insert([
+        //     [
+        //         "image" => "room-images/1.png",
+        //         "fk_id_room" => 1
+        //     ],
+        //     [
+        //         "image" => "room-images/2.png",
+        //         "fk_id_room" => 1
+        //     ],
+        //     [
+        //         "image" => "room-images/3.png",
+        //         "fk_id_room" => 1,
+        //     ],
+        //     [
+        //         "image" => "room-images/4.png",
+        //         "fk_id_room" => 1,
+        //     ],
+        //     [
+        //         "image" => "room-images/5.png",
+        //         "fk_id_room" => 1,
+        //     ],
+        // ]);
 
         DB::table('kind_payment_logs')->insert([
             [
