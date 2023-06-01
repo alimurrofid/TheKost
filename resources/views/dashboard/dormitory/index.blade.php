@@ -106,7 +106,7 @@
 
                             </div>
                             {{-- pagination --}}
-                            <div class="m-3">
+                            <div class="m-3 pagination pagination-primary">
                                 {{ $dormitories->links() }}
                             </div>
                         </div>

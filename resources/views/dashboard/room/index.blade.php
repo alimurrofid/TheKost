@@ -100,7 +100,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="m-3">
+                            <div class="m-3 pagination pagination-primary">
                                 {{ $rooms->links() }}
                             </div>
                         </div>
