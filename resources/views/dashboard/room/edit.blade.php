@@ -81,9 +81,19 @@
             
             <div class="mb-3">
 				<label for="image" class="form-label">Gambar</label>
-                <span>
-					<img class="img-preview img-fluid mb-3 p-0 border-1 border-primary d-none" id="image-preview" style="border: solid">
-				</span>
+				<div class="mb-3">
+					@if ($room->roomimages->count() > 0)
+								@foreach ($room->roomimages as $roomimage)
+									<span>
+										<img src="{{ asset("storage/" . $roomimage->image) }}" alt="" class="img-thumbnail">
+									</span>
+								@endforeach
+					@else
+						<div class="col-12 p-0 mt-4">
+							<span class="form-control border-1 border-danger text-danger">Tidak ada gambar untuk kamar ini</span>
+						</div>
+					@endif
+				</div>
 				<input type="hidden" name="fk_id_room" value="{{ $room->id }}">
 				<input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" name="image[]" multiple accept="image/*">
 				@error('image')

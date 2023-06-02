@@ -162,7 +162,11 @@ class PaymentLogController extends Controller
      */
     public function destroy(PaymentLog $paymentLog)
     {
-        PaymentLog::find($paymentLog->id)->delete();
+        // PaymentLog::find($paymentLog->id)->delete();
+        // return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
+
+        // $paymentLog->destroy($paymentLog->id);
+        $paymentLog->delete($paymentLog->id);
         return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
     }
 

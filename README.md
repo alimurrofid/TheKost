@@ -1,5 +1,4 @@
 ## Installation
-### Building yourself
 
 1. Clone the repository 
 ```sh
@@ -38,5 +37,5 @@ php artisan db:seed
 
 8. Run project
 ```sh
-php ser
+php artisan ser
 ```
