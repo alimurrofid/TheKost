@@ -160,15 +160,22 @@ class PaymentLogController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(PaymentLog $paymentLog)
+    public function destroy($id)
     {
-        // PaymentLog::find($paymentLog->id)->delete();
-        // return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
-
-        // $paymentLog->destroy($paymentLog->id);
-        $paymentLog->delete($paymentLog->id);
-        return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
+        try {
+            // Cari payment log berdasarkan ID
+            $paymentLog = PaymentLog::findOrFail($id);
+    
+            // Hapus payment log dari database
+            $paymentLog->delete();
+    
+            // Berikan pesan sukses dan redirect ke halaman index
+            return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
+        } catch (\Exception $e) {
+            // Tangani jika terjadi kesalahan saat menghapus payment log
+            return redirect()->route('transactions.index')->with('error', 'Failed to delete payment log');
+        }
     }
-
+    
    
 }
