@@ -41,9 +41,10 @@
             <a href="#home">
                 <img src="{{ asset('assets/img/logo-1.png') }}" alt="">
             </a>
+            {{-- <i class="bi bi-list mobile-nav-toggle"></i> --}}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="bi bi-list mobile-nav-toggle"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav mx-auto py-3">
@@ -187,7 +188,7 @@
                 <div class="row swiper mySwiper">
                     <div class="col-12 d-flex justify-content-start swiper-wrapper">
 
-                        <div class="card-facility me-3 position-relative swiper-slide">
+                        <div class="card-facility  position-relative swiper-slide">
                             <img src="{{ asset('assets/img/free-room.png') }}" alt="">
 
                             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
@@ -198,7 +199,7 @@
                             </div>
                         </div>
 
-                        <div class="card-facility me-3 position-relative swiper-slide">
+                        <div class="card-facility  position-relative swiper-slide">
                             <img src="{{ asset('assets/img/bad-room.png') }}" alt="">
 
                             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
@@ -209,7 +210,7 @@
                             </div>
                         </div>
 
-                        <div class="card-facility me-3 position-relative swiper-slide">
+                        <div class="card-facility  position-relative swiper-slide">
                             <img src="{{ asset('assets/img/kicten-room.png') }}" alt="">
 
                             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
@@ -220,7 +221,7 @@
                             </div>
                         </div>
 
-                        <div class="card-facility me-3 position-relative swiper-slide">
+                        <div class="card-facility position-relative swiper-slide">
                             <img src="{{ asset('assets/img/outdoor-room.png') }}" alt="">
 
                             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
@@ -231,7 +232,7 @@
                             </div>
                         </div>
 
-                        <div class="card-facility me-3 position-relative swiper-slide">
+                        <div class="card-facility position-relative swiper-slide">
                             <img src="{{ asset('assets/img/free-room.png') }}" alt="">
 
                             <div class="overlay position-absolute top-0 bottom-0 start-0 end-0 w-100 h-100">
@@ -245,10 +246,10 @@
                     </div>
                 </div>
 
-                <button class="arrow-left position-absolute start-0 top-50 translate-middle swiper-prev">
+                <button class="arrow-left translate-middle swiper-prev">
                     <img src="{{ asset('assets/img/arrowF-left.png') }}" alt="">
                 </button>
-                <button class="arrow-right position-absolute end-0 top-50 translate-middle swiper-next">
+                <button class="arrow-right translate-middle swiper-next">
                     <img src="{{ asset('assets/img/arrowF-right.png') }}" alt="">
                 </button>
             </div>

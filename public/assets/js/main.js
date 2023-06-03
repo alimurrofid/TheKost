@@ -232,12 +232,49 @@
 
     //   swiper facility
     var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 4,
+        slidesPerView: 1,
         spaceBetween: 30,
+
         // centeredSlides: true,
         navigation: {
             nextEl: ".swiper-next",
             prevEl: ".swiper-prev",
         },
+        breakpoints: {
+            "@0.00": {
+                slidesPerView: 1,
+                spaceBetween: 10,
+            },
+            "@0.75": {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            "@1.00": {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            "@1.50": {
+                slidesPerView: 4,
+                spaceBetween: 15,
+            },
+        },
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 1,
+        //         spaceBetween: 20,
+        //     },
+        //     640: {
+        //         slidesPerView: 1,
+        //         spaceBetween: 20,
+        //     },
+        //     768: {
+        //         slidesPerView: 2,
+        //         spaceBetween: 50,
+        //     },
+        //     1024: {
+        //         slidesPerView: 4,
+        //         spaceBetween: 30,
+        //     },
+        // },
     });
 })();
