@@ -37,36 +37,6 @@
                             <h6>Notifications</h6>
                         </li>
                         <li class="dropdown-item notification-item">
-                            <a class="d-flex align-items-center" href="#">
-                                <div class="notification-icon bg-primary">
-                                    <i class="bi bi-cart-check"></i>
-                                </div>
-                                <div class="notification-text ms-4">
-                                    <p class="notification-title font-bold">
-                                        Successfully check
-                                        out
-                                    </p>
-                                    <p class="notification-subtitle font-thin text-sm">
-                                        Order ID #256
-                                    </p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="dropdown-item notification-item">
-                            <a class="d-flex align-items-center" href="#">
-                                <div class="notification-icon bg-success">
-                                    <i class="bi bi-file-earmark-check"></i>
-                                </div>
-                                <div class="notification-text ms-4">
-                                    <p class="notification-title font-bold">
-                                        Homework submitted
-                                    </p>
-                                    <p class="notification-subtitle font-thin text-sm">
-                                        Algebra math
-                                        homework
-                                    </p>
-                                </div>
-                            </a>
                         </li>
                         <li>
                             <p class="text-center py-2 mb-0">
@@ -81,10 +51,11 @@
                     <div class="user-menu d-flex">
                         <div class="user-name text-end me-3">
                             <h6 class="mb-0 text-gray-600">
-                                John Ducky
+                                {{ Auth::user()->name }}
                             </h6>
                             <p class="mb-0 text-sm text-gray-600">
-                                Administrator
+                                {{-- {{ Auth::user()->role }} --}}
+                                Admin
                             </p>
                         </div>
                         <div class="user-img d-flex align-items-center">
@@ -98,7 +69,7 @@
                     style="min-width: 11rem">
                     <li>
                         <h6 class="dropdown-header">
-                            Hello, John!
+                            Hello, {{ Auth::user()->name }}
                         </h6>
                     </li>
                     <li>
@@ -110,18 +81,16 @@
                             Settings</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                            Wallet</a>
-                    </li>
-                    <li>
                         <hr class="dropdown-divider" />
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                        <a class="dropdown-item" href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i
+                                class="icon-mid bi bi-box-arrow-left me-2"></i>
                             Logout</a>
-                            <form form id="logout-form" action="{{ route('logout') }}" method="post">
-                                @csrf
-                            </form>
+                        <form form id="logout-form" action="{{ route('logout') }}" method="post">
+                            @csrf
+                        </form>
 
                     </li>
                 </ul>

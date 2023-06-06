@@ -56,54 +56,47 @@
                                             <th>Username</th>
                                             <th>Email</th>
                                             <th>Role</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="text-bold-500">
-                                                1
-                                            </td>
-                                            <td class="text-bold-500">
-                                                Michael Right
-                                            </td>
-                                            <td class="text-bold-500">
-                                                Michel@gmail.com
-                                            </td>
-                                            <td class="text-bold-500">
-                                                User
-                                            <td>
-                                                <a href="#" class="btn icon btn-primary" title="Detail"><i
-                                                        class="bi bi-pencil"></i></a>
-                                                <a href="#" class="btn icon btn-warning" title="Edit"><i
-                                                        class="bi bi-exclamation-triangle"></i></a>
-                                                <a href="#" class="btn icon btn-danger" title="Delete"><i
-                                                        class="bi bi-trash"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-bold-500">
-                                                1
-                                            </td>
-                                            <td class="text-bold-500">
-                                                Michael Right
-                                            </td>
-                                            <td class="text-bold-500">
-                                                Michel@gmail.com
-                                            </td>
-                                            <td class="text-bold-500">
-                                                User
-                                            <td>
-                                                <a href="#" class="btn icon btn-primary" title="Detail"><i
-                                                        class="bi bi-pencil"></i></a>
-                                                <a href="#" class="btn icon btn-warning" title="Edit"><i
-                                                        class="bi bi-exclamation-triangle"></i></a>
-                                                <a href="#" class="btn icon btn-danger" title="Delete"><i
-                                                        class="bi bi-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                        @forelse ($users as $index => $user)
+                                            <tr>
+                                                <td class="text-bold-500">
+                                                    {{ $index + $users->firstItem() }}
+                                                </td>
+                                                <td class="text-bold-500">
+                                                    {{ $user->name }}
+                                                </td>
+                                                <td class="text-bold-500">
+                                                    {{ $user->email }}
+                                                </td>
+                                                <td class="text-bold-500">
+                                                    User
+                                                </td>
+                                                <td>
+                                                    verified
+                                                </td>
+                                                <td>
+                                                    <a href="#" class="btn icon btn-primary" title="Detail"><i
+                                                            class="bi bi-pencil"></i></a>
+                                                    <a href="#" class="btn icon btn-warning" title="Edit"><i
+                                                            class="bi bi-exclamation-triangle"></i></a>
+                                                    <a href="#" class="btn icon btn-danger" title="Delete"><i
+                                                            class="bi bi-trash"></i></a>
+                                                </td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="6" class="text-center">No Data Found</td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
+                            </div>
+                            <div class="m-3 pagination pagination-primary">
+                                {{ $users->links() }}
                             </div>
                         </div>
                     </div>
