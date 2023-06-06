@@ -19,12 +19,18 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         //user seeder
-        DB::table('users')->insert([
-            [
-                "username" => "test",
-                "email" => "test@gmail.com",
-                "password" => Hash::make('test')
-            ]
+        // DB::table('users')->insert([
+        //     [
+        //         "name" => "test",
+        //         "email" => "test@gmail.com",
+        //         "password" => Hash::make('test')
+        //     ]
+        // ]);
+        User::create([
+            'name' => 'test',
+            'email' => 'test@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('password')
         ]);
 
         //dormitories seeder

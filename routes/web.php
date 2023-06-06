@@ -68,12 +68,24 @@ Route::prefix('form')->group(function () {
 });
 
 
+// Route::middleware(['auth','verified'])->group(function () {
+//     Route::get('home', function () {
+//         return view('dashboard.home');
+//     })->name('home')->middleware('can:dashboard');
+//     Route::get('edit-profile',function(){
+//         return view('dashboard.profile');
+//     })->name('profile.edit');
+// });
 
-// Route::middleware(['auth'])->group(function () {
+
+Route::middleware(['auth','verified'])->group(function () {
+    Route::get('/home', function () {
+        return view('dashboard.home');
+    });
     Route::resource('/dashboard/room', RoomController::class);
     Route::resource('/dashboard/dormitory', DormitoryController::class);
     Route::resource('/dashboard/transactions', PaymentLogController::class)->except([ 'edit', 'update']);
-// });
+});
 
 Route::get('/dashboard/dormitory/payment/{id}/year/{year}', function ($id, $year) {
     $dataDormitory = Dormitory::where("id", $id)->first();
