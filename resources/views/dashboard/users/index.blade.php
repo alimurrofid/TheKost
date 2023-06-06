@@ -73,10 +73,21 @@
                                                     {{ $user->email }}
                                                 </td>
                                                 <td class="text-bold-500">
-                                                    User
+                                                    {{-- superadmin, admin, user --}}
+                                                    @if ($user->role == 'superadmin')
+                                                        Superadmin
+                                                    @elseif($user->role == 'admin')
+                                                        Admin
+                                                    @else
+                                                        User
+                                                    @endif
                                                 </td>
                                                 <td>
-                                                    verified
+                                                    @if ($user->email_verified_at != null)
+                                                        <div class="badge bg-success">Verified</div>
+                                                    @else
+                                                        <div class="badge bg-warning">Unverified</div>
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     <a href="#" class="btn icon btn-primary" title="Detail"><i
