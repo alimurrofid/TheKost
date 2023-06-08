@@ -54,8 +54,7 @@
                                 {{ Auth::user()->name }}
                             </h6>
                             <p class="mb-0 text-sm text-gray-600">
-                                {{-- {{ Auth::user()->role }} --}}
-                                Admin
+                                {{ Auth::user()->role }}
                             </p>
                         </div>
                         <div class="user-img d-flex align-items-center">

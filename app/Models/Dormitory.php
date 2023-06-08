@@ -9,7 +9,7 @@ class Dormitory extends Model
 {
     use HasFactory;
     protected $table = 'dormitories';
-    
+
     protected $fillable = [
         'name',
         'address',
@@ -22,6 +22,11 @@ class Dormitory extends Model
     public function rooms()
     {
         return $this->hasMany(Room::class, "fk_id_dormitory");
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, "user_id");
     }
 
     public function paymentLogs()

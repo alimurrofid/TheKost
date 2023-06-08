@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateDormitoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class DormitoryController extends Controller
 {
@@ -37,11 +39,24 @@ class DormitoryController extends Controller
         "trashIndex" => "dashboard.dormitory.trashIndex",
         "trashDetail" => "dashboard.dormitory.trashDetail",
     ];
+
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Gate::denies('index-dormitory')) {
+                abort(403, 'You do not have permission to access this page');
+            }
+        return $next($request);
+        });
+    }
+
     public function index()
     {
+        $this->authorize('index-dormitory');
+
         return view(DormitoryController::DORMITORY_VIEW["index"], [
             'title' => 'Data Penghuni',
-            'dormitories' => Dormitory::with(["rooms"])->orderBy("name")->paginate(10),
+            'dormitories' => Dormitory::with(["user"])->orderBy("name")->paginate(10),
             'dormitory_route' => DormitoryController::DORMITORY_ROUTE
         ]);
     }
@@ -51,9 +66,13 @@ class DormitoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('index-dormitory');
+
         return view(DormitoryController::DORMITORY_VIEW["create"], [
             'title' => 'Tambah Penghuni',
-            'dormitory_route' => DormitoryController::DORMITORY_ROUTE
+            'dormitory_route' => DormitoryController::DORMITORY_ROUTE,
+            'user_route' => UserController::USER_ROUTE,
+            'users' => DB::table('users')->where('role', 'user')->get()
         ]);
     }
 
@@ -62,18 +81,20 @@ class DormitoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('index-dormitory');
+
         $rulesData = [
             'name' => 'required|unique:dormitories',
             'address' => 'required',
             'phone_number' => 'required|unique:dormitories|numeric|digits_between:11,13',
             'checkin_date' => 'required|date',
-            
+            'user_id' => 'required'
         ];
 
         if ($request->file("image")) {
             $rulesData["image"] = "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048";
         }
-        
+
         $validatedData = $request->validate($rulesData);
 
         if ($validatedData["image"]) {
@@ -82,7 +103,7 @@ class DormitoryController extends Controller
         }
 
         Dormitory::create($validatedData);
-        
+
         return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil ditambahkan');
     }
 
@@ -91,6 +112,8 @@ class DormitoryController extends Controller
      */
     public function show(Dormitory $dormitory)
     {
+        $this->authorize('index-dormitory');
+
         $date_start_checkin = null;
         if ($dormitory->checkin_date) {
             $date_start_checkin = getdate(strtotime($dormitory->checkin_date));
@@ -109,9 +132,12 @@ class DormitoryController extends Controller
      */
     public function edit(Dormitory $dormitory)
     {
+        $this->authorize('index-dormitory');
+
         return view(DormitoryController::DORMITORY_VIEW["edit"], [
             'title' => 'Edit Data Penghuni',
             'dormitory' => $dormitory,
+            'users' => DB::table('users')->where('role', 'user')->get(),
             'dormitory_route' => DormitoryController::DORMITORY_ROUTE
         ]);
     }
@@ -121,11 +147,14 @@ class DormitoryController extends Controller
      */
     public function update(Request $request, Dormitory $dormitory)
     {
+        $this->authorize('index-dormitory');
+
         $rulesData = [
             'name' => 'required|unique:dormitories,name,'.$dormitory->id,
             'address' => 'required',
             'phone_number' => 'required|numeric|digits_between:11,13|unique:dormitories,phone_number,'.$dormitory->id ,
             'checkin_date' => 'required|date',
+            'user_id' => 'required'
         ];
 
         if ($request->file("image")) {
@@ -133,6 +162,10 @@ class DormitoryController extends Controller
         }
 
         $validatedData = $request->validate($rulesData);
+
+        if ($validatedData["user_id"] == 0) {
+            $validatedData["user_id"] = null;
+        }
 
         if ($request->file("image")) {
             if ($dormitory->image) {
@@ -153,6 +186,8 @@ class DormitoryController extends Controller
      */
     public function destroy(Dormitory $dormitory)
     {
+        $this->authorize('index-dormitory');
+
         Dormitory::with(["rooms"])->find($dormitory->id)->delete();
         return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil dihapus');
     }

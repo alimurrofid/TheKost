@@ -8,6 +8,11 @@ use App\Http\Controllers\UserController;
 use App\Models\User;
 use App\Models\Dormitory;
 use App\Models\PaymentLog;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Routing\RouteGrup;
+use Illuminate\Support\Facades\Artisan;
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,31 +30,9 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.home');
-});
-
-Route::prefix('dashboard')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.home');
-    })->name('dashboard.home');
-
-    // Route::get('/rooms', function () {
-    //     return view('dashboard.rooms');
-    // })->name('dashboard.rooms');
-
-    // Route::get('/members', function () {
-    //     return view('dashboard.members');
-    // })->name('dashboard.members');
-
-    // Route::get('/transaction', function () {
-    //     return view('dashboard.transaction');
-    // })->name('dashboard.transaction');
-
-    Route::get('/users', function () {
-        return view('user.index');
-    })->name('users');
-});
+// Route::get('/dashboard', function () {
+//     return view('dashboard.home');
+// });
 
 Route::prefix('form')->group(function () {
     Route::get('/room', function () {
@@ -81,13 +64,13 @@ Route::prefix('form')->group(function () {
 
 
 Route::middleware(['auth','verified'])->group(function () {
-    Route::get('/home', function () {
+    Route::get('home', function () {
         return view('dashboard.home');
-    });
+    })->name('home');
     Route::resource('/dashboard/room', RoomController::class);
     Route::resource('/dashboard/dormitory', DormitoryController::class);
-    Route::resource('/dashboard/transactions', PaymentLogController::class)->except([ 'edit', 'update']);
-    Route::resource('/dashboard/users', UserController::class)->except([ 'edit', 'update']);
+    Route::resource('/dashboard/transactions', PaymentLogController::class);
+    Route::resource('/dashboard/users', UserController::class);
 });
 
 Route::get('/dashboard/dormitory/payment/{id}/year/{year}', function ($id, $year) {

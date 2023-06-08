@@ -38,22 +38,24 @@
                         </div>
 
                         {{-- alert succes --}}
-                        @if (session()->has("success")) 
-                        <div class="col-md-5 p-0">  
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session("success") }}
-                                <button type="button" class="btn-close py-0 py-3" data-bs-dismiss="alert" aria-label="Close"></button>
+                        @if (session()->has('success'))
+                            <div class="col-md-5 p-0">
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{ session('success') }}
+                                    <button type="button" class="btn-close py-0 py-3" data-bs-dismiss="alert"
+                                        aria-label="Close"></button>
+                                </div>
                             </div>
-                        </div>
-                    @endif  
-                    {{-- end alert succes --}}
+                        @endif
+                        {{-- end alert succes --}}
                         <div class="card-content">
                             <div class="card-body">
                                 <p>
                                     "Welcome to our web page showcasing the member data of our boarding house, where comfort
                                     and convenience come together in one place."
                                 </p>
-                                <a href="{{route($dormitory_route["create"])}}" class="btn icon icon-left btn-primary"><i data-feather="user-plus"></i>
+                                <a href="{{ route($dormitory_route['create']) }}" class="btn icon icon-left btn-primary"><i
+                                        data-feather="user-plus"></i>
                                     Add Data</a>
                             </div>
 
@@ -63,6 +65,7 @@
                                     <thead class="thead-dark">
                                         <tr>
                                             <th>No.</th>
+                                            <th>User Id</th>
                                             <th>Name</th>
                                             <th>Address</th>
                                             <th>Number</th>
@@ -75,6 +78,9 @@
                                                 <td class="text-bold-500">
 
                                                     {{ $loop->iteration }}
+                                                </td>
+                                                <td class="text-bold-500">
+                                                    {!! $dormitory->user->name ?? '<b class="text-danger">-</b>' !!}
                                                 </td>
                                                 <td class="text-bold-500">
                                                     {{ $dormitory->name }}
@@ -90,12 +96,14 @@
                                                             class="bi bi-pencil-square"></i></a>
                                                     {{-- <a href="" class="btn icon btn-danger" title="Delete"><i
                                                             class="bi bi-trash"></i></a> --}}
-                                                            <form action="{{ route($dormitory_route["delete"], $dormitory->id) }}" class="d-inline" method="post">
-                                                                @csrf
-                                                                @method("delete")
-                                                                <button onclick="return confirm('Konfirmasi hapus data ?')" class="btn icon btn-danger" title="Delete"><i
-                                                                    class="bi bi-trash"></i></button>
-                                                            </form>
+                                                    <form action="{{ route($dormitory_route['delete'], $dormitory->id) }}"
+                                                        class="d-inline" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button onclick="return confirm('Konfirmasi hapus data ?')"
+                                                            class="btn icon btn-danger" title="Delete"><i
+                                                                class="bi bi-trash"></i></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

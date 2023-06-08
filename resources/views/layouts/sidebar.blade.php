@@ -44,7 +44,7 @@
             <li class="sidebar-title">Menu</li>
 
             <li class="sidebar-item">
-                <a href="{{ route('dashboard.home') }}" class="sidebar-link">
+                <a href="{{ route('home') }}" class="sidebar-link">
                     <i class="bi bi-grid-fill"></i>
                     <span>Dashboard</span>
                 </a>

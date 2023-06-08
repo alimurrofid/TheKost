@@ -9,13 +9,38 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
+
+
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
+    public const USER_ROUTE = [
+        "index" => "user.index",
+        "store" => "user.store",
+        "create" => "user.create",
+        "show" => "user.show",
+        "edit" => "user.edit",
+        "update" => "user.update",
+        "delete" => "user.destroy",
+    ];
+
+    public const USER_VIEW = [
+        "index" => "dashboard.user.index",
+        "create" => "dashboard.user.create",
+        "detail" => "dashboard.user.detail",
+        "edit" => "dashboard.user.edit",
+    ];
+
+
     public function index(Request $request)
     {
+        if (Gate::denies('index-user')) {
+            abort(403, 'You do not have permission to access this page');
+        }
+
         $users = DB::table('users')
         ->when($request->input('search'), function ($query, $search) {
             $query->where('name', 'like', '%' . $search . '%')
