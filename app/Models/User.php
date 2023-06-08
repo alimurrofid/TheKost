@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable ,HasRoles, HasPermissions;
 
     protected $table = 'users';
 
@@ -47,6 +47,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function dormitory()
     {
         return $this->hasOne(Dormitory::class, "dormitory_id");
+    }
+
+    public function bills()
+    {
+        return $this->hasMany(Bill::class, "bill_id");
     }
 
 }
