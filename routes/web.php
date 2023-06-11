@@ -5,6 +5,7 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\DormitoryController;
 use App\Http\Controllers\PaymentLogController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BillController;
 use App\Models\User;
 use App\Models\Dormitory;
 use App\Models\PaymentLog;
@@ -71,6 +72,7 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::resource('/dashboard/dormitory', DormitoryController::class);
     Route::resource('/dashboard/transactions', PaymentLogController::class);
     Route::resource('/dashboard/users', UserController::class);
+    Route::resource('/dashboard/bills', BillController::class);
 });
 
 Route::get('/dashboard/dormitory/payment/{id}/year/{year}', function ($id, $year) {

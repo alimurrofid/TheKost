@@ -68,6 +68,9 @@
                     <li class="submenu-item">
                         <a href="{{ route('users.index') }}">User</a>
                     </li>
+                    <li class="submenu-item">
+                        <a href="{{ route('bills.index') }}">Bill</a>
+                    </li>
                 </ul>
             </li>
         </ul>

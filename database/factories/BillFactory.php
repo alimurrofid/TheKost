@@ -18,6 +18,10 @@ class BillFactory extends Factory
     {
         return [
             //
+            'user_id' => 1,
+            'amount' => 100000,
+            'due_date' => '2021-08-01',
+            'status' => 'unpaid',
         ];
     }
 }
