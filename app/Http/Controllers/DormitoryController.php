@@ -23,10 +23,7 @@ class DormitoryController extends Controller
         "edit" => "dormitory.edit",
         "update" => "dormitory.update",
         "delete" => "dormitory.destroy",
-        "trashIndex" => "dormitory.trash.index",
-        "trashDetail" => "dormitory.trash.detail",
-        "trashRestore" => "dormitory.trash.restore",
-        "trashDelete" => "dormitory.trash.delete"
+        
     ];
 
     public const DORMITORY_VIEW = [
@@ -34,8 +31,7 @@ class DormitoryController extends Controller
         "create" => "dashboard.dormitory.create",
         "detail" => "dashboard.dormitory.detail",
         "edit" => "dashboard.dormitory.edit",
-        "trashIndex" => "dashboard.dormitory.trashIndex",
-        "trashDetail" => "dashboard.dormitory.trashDetail",
+      
     ];
     public function index()
     {

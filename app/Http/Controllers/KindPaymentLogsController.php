@@ -15,10 +15,7 @@ class KindPaymentLogsController extends Controller
         "edit" => "transactions.edit",
         "update" => "transactions.update",
         "delete" => "transactions.destroy",
-        "trashIndex" => "transactions.trash.index",
-        "trashDetail" => "transactions.trash.detail",
-        "trashRestore" => "transactions.trash.restore",
-        "trashDelete" => "transactions.trash.delete"
+       
     ];
 
     public const KINDPAYMENT_VIEW = [
@@ -26,8 +23,7 @@ class KindPaymentLogsController extends Controller
         "create" => "dashboard.transaction.create",
         "detail" => "dashboard.transaction.detail",
         "edit" => "dashboard.transaction.edit",
-        "trashIndex" => "dashboard.transaction.trashIndex",
-        "trashDetail" => "dashboard.transaction.trashDetail",
+       
     ];
 
     /**

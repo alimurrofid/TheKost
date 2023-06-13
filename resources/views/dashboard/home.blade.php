@@ -16,7 +16,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                         <div class="stats-icon purple mb-2">
-                                            <i class="iconly-boldShow"></i>
+                                            <i class="iconly-boldFilter"></i>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -24,7 +24,7 @@
                                             Rooms Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            21 Rooms
+                                            {{$total_rooms}} Rooms
                                         </h6>
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                         <div class="stats-icon blue mb-2">
-                                            <i class="iconly-boldProfile"></i>
+                                            <i class="iconly-boldAdd-User"></i>
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -45,7 +45,7 @@
                                             Members Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            15 Members
+                                            {{$total_dormitories}} Members
                                         </h6>
                                     </div>
                                 </div>
@@ -58,7 +58,8 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                         <div class="stats-icon green mb-2">
-                                            <i class="iconly-boldAdd-User"></i>
+                                            <i class="iconly-boldShield-Done"></i>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -66,7 +67,7 @@
                                             Deals Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            112 Deals
+                                            {{$total_transactions}} Deals
                                         </h6>
                                     </div>
                                 </div>
@@ -79,7 +80,8 @@
                                 <div class="row">
                                     <div class="col-md-4 col-lg-12 col-xl-12 col-xxl-5 d-flex justify-content-start">
                                         <div class="stats-icon red mb-2">
-                                            <i class="iconly-boldBookmark"></i>
+                                            <i class="iconly-boldProfile"></i>
+
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
@@ -87,7 +89,7 @@
                                             Users Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            17 Users
+                                            {{$total_users}} Users
                                         </h6>
                                     </div>
                                 </div>
