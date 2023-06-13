@@ -24,10 +24,7 @@ class RoomController extends Controller
         "edit" => "room.edit",
         "update" => "room.update",
         "delete" => "room.destroy",
-        "trashIndex" => "room.trash.index",
-        "trashDetail" => "room.trash.detail",
-        "trashRestore" => "room.trash.restore",
-        "trashDelete" => "room.trash.delete",
+       
     ];
 
     public const ROOM_VIEW = [
@@ -35,8 +32,7 @@ class RoomController extends Controller
         "create" => "dashboard.room.create",
         "detail" => "dashboard.room.detail",
         "edit" => "dashboard.room.edit",
-        "trashIndex" => "dashboard.room.trashIndex",
-        "trashDetail" => "dashboard.room.trashDetail",
+        
     ];
     public function index()
     {

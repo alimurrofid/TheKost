@@ -16,18 +16,14 @@ class PaymentLogController extends Controller
         "create" => "transactions.create",
         "show" => "transactions.show",
         "delete" => "transactions.destroy",
-        "trashIndex" => "transactions.trash.index",
-        "trashDetail" => "transactions.trash.detail",
-        "trashRestore" => "transactions.trash.restore",
-        "trashDelete" => "transactions.trash.delete"
+       
     ];
 
     public const TRANSACTION_VIEW = [
         "index" => "dashboard.transaction.index",
         "create" => "dashboard.transaction.create",
         "detail" => "dashboard.transaction.detail",
-        "trashIndex" => "dashboard.transaction.trashIndex",
-        "trashDetail" => "dashboard.transaction.trashDetail",
+        
     ];
     /**
      * Display a listing of the resource.
@@ -73,7 +69,7 @@ class PaymentLogController extends Controller
             'title' => 'Tambah Transaksi',
             'transactions_route' => PaymentLogController::TRANSACTION_ROUTE,
             'dormitories_route' => DormitoryController::DORMITORY_ROUTE,
-            'kindpaymentlogs_route' => KindPaymentLogsController::KINDPAYMENT_ROUTE,
+            // 'kindpaymentlogs_route' => KindPaymentLogsController::KINDPAYMENT_ROUTE,
             'dormitories' => $dormitories,
             'kindpaymentlogs' => KindPaymentLogs::all(),
             'transactions' => PaymentLog::all(),
