@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('member_id')->index();
             $table->unsignedBigInteger('user_id');
-            $table->integer('amount');
+            $table->double('amount');
             $table->date('due_date');
             $table->enum('status', ['paid', 'unpaid'])->default('unpaid');
             $table->timestamps();
