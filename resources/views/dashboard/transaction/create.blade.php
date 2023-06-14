@@ -8,7 +8,7 @@
     <div class="container d-block">
         <a href="{{ route($transactions_route['index']) }}"><i class="bi bi-chevron-left"></i></a>
         <a class="navbar-brand ms-4" href="{{ route($transactions_route['index']) }}">
-            <img src="{{ asset('assets/images/logo/logo.svg') }}">
+            <img src="{{ asset('assets/img/logo-kos.svg') }}">
         </a>
     </div>
 </nav>
@@ -40,7 +40,7 @@
 					</div>
 				@enderror
 			</div>
-            @if (true)				
+            @if (true)
 				<div class="mb-3">
 					<label for="total_month" class="form-label">Total Bulan Bayar</label>
 					<input type="number" min="1" max="12" name="total_month" class="form-control @error('total_month') is-invalid @enderror" id="total_month" value="{{ old("total_month") }}" required>
@@ -198,9 +198,9 @@
 					console.log(data.data)
 				}
 			};
-			
+
 			xhr.open("GET", urlajax + "/get/" + inputDormitory.value, true);
-			
+
 			xhr.send();
 		})
 
@@ -209,8 +209,8 @@
 		const inputImage = document.querySelector("#proof_payment");
 		const previewImage = document.querySelector("#image-preview.img-preview");
 
-		const displayInputImage = () => {	
-			previewImage.classList.remove("d-none")			
+		const displayInputImage = () => {
+			previewImage.classList.remove("d-none")
 			previewImage.style.display = "block";
 			previewImage.style.height = "350px";
 			previewImage.style.aspectRatio = "16/9";
@@ -226,7 +226,7 @@
 		function showOrHiddenInputImage(elementInput, elementContainer) {
 			if (elementInput.selectedOptions[0].className == "true") {
 				elementContainer.classList.remove("d-none")
-				if (inputImage.files[0] != null) {	
+				if (inputImage.files[0] != null) {
 					displayInputImage()
 				}
 			} else {
@@ -259,7 +259,7 @@
 					alertInputMonth.classList.add("d-none");
 					alertInputMonth.classList.remove("d-block");
 					if (parseInt(inputFromMonth.value) + parseInt(inputTotalMonth.value) > 12) {
-						inputToMonth.value = parseInt(inputFromMonth.value) + parseInt(inputTotalMonth.value) - 12	
+						inputToMonth.value = parseInt(inputFromMonth.value) + parseInt(inputTotalMonth.value) - 12
 					} else {
 						inputToMonth.value = parseInt(inputFromMonth.value) + parseInt(inputTotalMonth.value)
 					}
@@ -273,7 +273,7 @@
 
 		inputToMonth.addEventListener("input", () => {
 			if (parseInt(inputToMonth.value) - parseInt(inputFromMonth.value) <= 0) {
-				inputTotalMonth.value = 12 + (parseInt(inputToMonth.value) - parseInt(inputFromMonth.value)) 	
+				inputTotalMonth.value = 12 + (parseInt(inputToMonth.value) - parseInt(inputFromMonth.value))
 			} else {
 				inputTotalMonth.value = parseInt(inputToMonth.value) - parseInt(inputFromMonth.value)
 			}

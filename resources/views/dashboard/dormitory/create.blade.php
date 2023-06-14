@@ -8,7 +8,7 @@
         <div class="container d-block">
             <a href="{{ route($dormitory_route['index']) }}"><i class="bi bi-chevron-left"></i></a>
             <a class="navbar-brand ms-4" href="{{ route($dormitory_route['index']) }}">
-                <img src="{{ asset('assets/img/logo-blue.svg') }}">
+                <img src="{{ asset('assets/img/logo-kos.svg') }}">
             </a>
         </div>
     </nav>
