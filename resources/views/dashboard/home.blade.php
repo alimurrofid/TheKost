@@ -21,10 +21,10 @@
                                     </div>
                                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                                         <h6 class="text-muted font-semibold">
-                                            Rooms Data
+                                            Rooms Data  
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            {{$total_rooms}} Rooms
+                                            {{-- {{$total_rooms}} Rooms --}}
                                         </h6>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
                                             Members Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            {{$total_dormitories}} Members
+                                            {{-- {{$total_dormitories}} Members --}}
                                         </h6>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                                             Deals Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            {{$total_transactions}} Deals
+                                            {{-- {{$total_transactions}} Deals --}}
                                         </h6>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                             Users Data
                                         </h6>
                                         <h6 class="font-extrabold mb-0">
-                                            {{$total_users}} Users
+                                            {{-- {{$total_users}} Users --}}
                                         </h6>
                                     </div>
                                 </div>

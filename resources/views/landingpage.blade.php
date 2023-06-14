@@ -71,7 +71,7 @@
                     </li>
                 </ul>
                 <div>
-                    <a href="#" class="btn btn-primary">LOGIN</a>
+                    <a href="{{route('login')}}" class="btn btn-primary">LOGIN</a>
                 </div>
             </div>
         </div>

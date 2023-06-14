@@ -22,11 +22,13 @@ use App\Models\PaymentLog;
 Route::get("/", function(){
 return view("landingpage");
 })->name("landingpage");
-Route::get('/sigin', function () {
-    return view('auth.login');
-});
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard.home');
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard.home');
+})->name('dashboard.home');
+
 
 
     Route::get('/dashboard/users', function () {
