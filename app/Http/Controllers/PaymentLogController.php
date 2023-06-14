@@ -7,6 +7,7 @@ use App\Models\KindPaymentLogs;
 use App\Models\PaymentLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Gate;
 
 class PaymentLogController extends Controller
 {
@@ -16,20 +17,24 @@ class PaymentLogController extends Controller
         "create" => "transactions.create",
         "show" => "transactions.show",
         "delete" => "transactions.destroy",
-       
+
     ];
 
     public const TRANSACTION_VIEW = [
         "index" => "dashboard.transaction.index",
         "create" => "dashboard.transaction.create",
         "detail" => "dashboard.transaction.detail",
-        
+
     ];
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        if (Gate::denies('index-paymentlog')) {
+            abort(403, 'You do not have permission to access this page');
+        }
+
         $transactions = PaymentLog::with('dormitory')->paginate(10);
         $months = config("app.month.language.indonesian");
 
@@ -92,11 +97,11 @@ class PaymentLogController extends Controller
             'year_to' => 'required',
             'fk_id_kind_paymentlogs' => 'required',
             'fk_id_dormitory' => 'required'
-        ];      
-        
+        ];
+
         if ($needImage) {
             $rulesData["proof_payment"] = "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048";
-        } 
+        }
 
         $validatedData = $request->validate($rulesData);
 
@@ -110,8 +115,8 @@ class PaymentLogController extends Controller
 
         // return dd($validatedData);
 
-        // $tahun = date('Y'); 
-        // $bulan = date('m'); 
+        // $tahun = date('Y');
+        // $bulan = date('m');
         // $tanggal = cal_days_in_month(CAL_GREGORIAN, $bulan, $tahun);
         // return $tanggal;
 
@@ -161,10 +166,10 @@ class PaymentLogController extends Controller
         try {
             // Cari payment log berdasarkan ID
             $paymentLog = PaymentLog::findOrFail($id);
-    
+
             // Hapus payment log dari database
             $paymentLog->delete();
-    
+
             // Berikan pesan sukses dan redirect ke halaman index
             return redirect()->route('transactions.index')->with('success', 'Payment Log deleted successfully');
         } catch (\Exception $e) {
@@ -172,6 +177,6 @@ class PaymentLogController extends Controller
             return redirect()->route('transactions.index')->with('error', 'Failed to delete payment log');
         }
     }
-    
-   
+
+
 }

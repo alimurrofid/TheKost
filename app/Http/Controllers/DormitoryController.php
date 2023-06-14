@@ -8,6 +8,8 @@ use App\Http\Requests\UpdateDormitoryRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Gate;
 
 class DormitoryController extends Controller
 {
@@ -23,7 +25,7 @@ class DormitoryController extends Controller
         "edit" => "dormitory.edit",
         "update" => "dormitory.update",
         "delete" => "dormitory.destroy",
-        
+
     ];
 
     public const DORMITORY_VIEW = [
@@ -31,10 +33,14 @@ class DormitoryController extends Controller
         "create" => "dashboard.dormitory.create",
         "detail" => "dashboard.dormitory.detail",
         "edit" => "dashboard.dormitory.edit",
-      
+
     ];
     public function index()
     {
+        if (Gate::denies('index-dormitory')) {
+            abort(403, 'You do not have permission to access this page');
+        }
+
         return view(DormitoryController::DORMITORY_VIEW["index"], [
             'title' => 'Data Penghuni',
             'dormitories' => Dormitory::with(["rooms"])->orderBy("name")->paginate(10),
@@ -63,13 +69,13 @@ class DormitoryController extends Controller
             'address' => 'required',
             'phone_number' => 'required|unique:dormitories|numeric|digits_between:11,13',
             'checkin_date' => 'required|date',
-            
+
         ];
 
         if ($request->file("image")) {
             $rulesData["image"] = "required|image|mimes:jpeg,png,jpg,gif,svg|max:2048";
         }
-        
+
         $validatedData = $request->validate($rulesData);
 
         if ($validatedData["image"]) {
@@ -78,7 +84,7 @@ class DormitoryController extends Controller
         }
 
         Dormitory::create($validatedData);
-        
+
         return redirect()->route(DormitoryController::DORMITORY_ROUTE["index"])->with('success', 'Data Penghuni berhasil ditambahkan');
     }
 

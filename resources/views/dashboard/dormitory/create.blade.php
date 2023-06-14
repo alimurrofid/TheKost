@@ -3,16 +3,16 @@
 @section('title', 'Form Member')
 
 @section('content')
-{{-- start logo and back --}}
+    {{-- start logo and back --}}
     <nav class="navbar navbar-light">
         <div class="container d-block">
             <a href="{{ route($dormitory_route['index']) }}"><i class="bi bi-chevron-left"></i></a>
             <a class="navbar-brand ms-4" href="{{ route($dormitory_route['index']) }}">
-                <img src="{{ asset('assets/images/logo/logo.svg') }}">
+                <img src="{{ asset('assets/img/logo-blue.svg') }}">
             </a>
         </div>
     </nav>
-{{--endt logo and back --}}
+    {{-- endt logo and back --}}
 
     <div class="card-header">
         <h4 class="card-title">Form Members</h4>
@@ -23,7 +23,7 @@
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                    placeholder="Room Number" value="{{old('name')}}">
+                    placeholder="Room Number" value="{{ old('name') }}">
                 @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -33,7 +33,7 @@
             <div class="mb-3">
                 <label for="address" class="form-label">Address</label>
                 <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                    name="address" placeholder="Member Name" value="{{old('address')}}">
+                    name="address" placeholder="Member Name" value="{{ old('address') }}">
                 @error('address')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -42,21 +42,23 @@
             </div>
             <div class="mb-3">
                 <label for="phone_number" class="form-label">Phone Number</label>
-				<input type="text" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" value="{{ old("phone_number") }}">
-				@error('phone_number')
-					<div class="invalid-feedback">
-						{{ $message }}
-					</div>
-				@enderror
+                <input type="text" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror"
+                    id="phone_number" value="{{ old('phone_number') }}">
+                @error('phone_number')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
             {{-- form tanggal --}}
             <div class="mb-3">
                 <label for="checkin_date" class="form-label">Date Of Entry</label>
-				<input type="date" name="checkin_date" class="form-control @error('checkin_date') is-invalid @enderror" id="checkin_date" value="{{ old("checkin_date", date('m/d/Y')) }}">
-				@error('checkin_date')
-					<div class="invalid-feedback">
-						{{ $message }}
-					</div>
+                <input type="date" name="checkin_date" class="form-control @error('checkin_date') is-invalid @enderror"
+                    id="checkin_date" value="{{ old('checkin_date', date('m/d/Y')) }}">
+                @error('checkin_date')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
             </div>
 

@@ -13,7 +13,7 @@ class DashboardController extends Controller
     public function index()
     {
 
-        return view('dashboard.index', [
+        return view('dashboard.home', [
             'total_dormitories' => count(Dormitory::all()),
             'total_rooms' => count(Room::all()),
             'total_transactions' => count(PaymentLog::all()),

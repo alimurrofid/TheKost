@@ -26,12 +26,17 @@ class DatabaseSeeder extends Seeder
         //         "password" => Hash::make('test')
         //     ]
         // ]);
-        User::create([
-            'name' => 'test',
-            'email' => 'test@gmail.com',
-            'email_verified_at' => now(),
-            'password' => Hash::make('password')
+
+        $this->call([
+            UserSeeder::class,
         ]);
+
+        // User::create([
+        //     'name' => 'test',
+        //     'email' => 'test@gmail.com',
+        //     'email_verified_at' => now(),
+        //     'password' => Hash::make('password')
+        // ]);
 
         //dormitories seeder
         DB::table('dormitories')->insert([
@@ -105,8 +110,8 @@ class DatabaseSeeder extends Seeder
                 "address" => "Muharto",
                 "phone_number" => "0812345678992"
             ],
-            
-            
+
+
         ]);
 
         DB::table('rooms')->insert([

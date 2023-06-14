@@ -57,21 +57,21 @@
                 </a>
                 <ul class="submenu">
                     <li class="submenu-item active">
-                        <a href="{{route('room.index')}}">Room</a>
+                        <a href="{{ route('room.index') }}">Room</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="{{route('dormitory.index')}}">Member</a>
+                        <a href="{{ route('dormitory.index') }}">Member</a>
                     </li>
                     <li class="submenu-item">
                         <a href="{{ route('transactions.index') }}">Trasaction</a>
                     </li>
                     <li class="submenu-item">
-                        <a href="{{ route('dashboard.users') }}">User</a>
+                        <a href="{{ route('users.index') }}">User</a>
                     </li>
                 </ul>
             </li>
 
-           
+
         </ul>
     </div>
 </div>
