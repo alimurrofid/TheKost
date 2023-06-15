@@ -49,8 +49,38 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="sidebar-item">
+                <a href="{{ route('home.index') }}" class="sidebar-link">
+                    <i class="bi bi-gear"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('users.index') }}" class="sidebar-link">
+                    <i class="bi bi-person-rolodex"></i>
+                    <span>Data Users</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('room.index') }}" class="sidebar-link">
+                    <i class="bi bi-clipboard-data-fill"></i>
+                    <span>Data Rooms</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('dormitory.index') }}" class="sidebar-link">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Data Members</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('transactions.index') }}" class="sidebar-link">
+                    <i class="bi bi-wallet2"></i>
+                    <span>Data Transaksi</span>
+                </a>
+            </li>
 
-            <li class="sidebar-item has-sub active">
+            {{-- <li class="sidebar-item has-sub active">
                 <a href="#" class="sidebar-link">
                     <i class="bi bi-collection-fill"></i>
                     <span>Table Data</span>
@@ -69,7 +99,7 @@
                         <a href="{{ route('users.index') }}">User</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
 
 
         </ul>
