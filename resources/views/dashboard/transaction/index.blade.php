@@ -16,7 +16,7 @@
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="index.html">Dashboard</a>
+                                <a href="#">Dashboard</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 <a href="#">Transaction</a>
@@ -94,12 +94,15 @@
                                                         class="btn icon btn-primary" title="Detail"><i
                                                             class="bi bi-eye"></i></a>
 
-                                                            <form action="{{ route($transactions_route["delete"], $transaction->id) }}" class="d-inline" method="post">
-                                                                @csrf
-                                                                @method("delete")
-                                                                <button onclick="return confirm('Konfirmasi hapus data ?')" class="btn icon btn-danger" title="Delete"><i
-                                                                    class="bi bi-trash"></i></button>
-                                                            </form>
+                                                    <form
+                                                        action="{{ route($transactions_route['delete'], $transaction->id) }}"
+                                                        class="d-inline" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button onclick="return confirm('Konfirmasi hapus data ?')"
+                                                            class="btn icon btn-danger" title="Delete"><i
+                                                                class="bi bi-trash"></i></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

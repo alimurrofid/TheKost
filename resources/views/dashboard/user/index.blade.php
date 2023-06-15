@@ -42,8 +42,8 @@
                                     "Welcome to our web page showcasing the user data of our boarding house, where comfort
                                     and convenience come together in one place."
                                 </p>
-                                <a href="{{ route('form.user') }}" class="btn icon icon-left btn-primary"><i
-                                        data-feather="edit"></i>
+                                <a href="{{ route('users.create') }}" class="btn icon icon-left btn-primary"><i
+                                        data-feather="user-plus"></i>
                                     Add Data</a>
                             </div>
 
@@ -90,12 +90,20 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="#" class="btn icon btn-primary" title="Detail"><i
-                                                            class="bi bi-pencil"></i></a>
-                                                    <a href="#" class="btn icon btn-warning" title="Edit"><i
-                                                            class="bi bi-exclamation-triangle"></i></a>
-                                                    <a href="#" class="btn icon btn-danger" title="Delete"><i
-                                                            class="bi bi-trash"></i></a>
+                                                    <a href="{{ route('users.show', $user->id) }}"
+                                                        class="btn icon btn-primary" title="Detail"><i
+                                                            class="bi bi-eye"></i></a>
+                                                    <a href="{{ route('users.edit', $user->id) }}"
+                                                        class="btn icon btn-warning" title="Edit"><i
+                                                            class="bi bi-pencil-square"></i></a>
+                                                    <form action="{{ route('users.destroy', $user->id) }}" method="post"
+                                                        class="d-inline">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button onclick="return confirm('Konfirmasi hapus data ?')"
+                                                            class="btn icon btn-danger" title="Delete"><i
+                                                                class="bi bi-trash"></i></button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @empty

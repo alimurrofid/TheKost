@@ -18,13 +18,13 @@ class UserController extends Controller
      */
 
     public const USER_ROUTE = [
-        "index" => "user.index",
-        "store" => "user.store",
-        "create" => "user.create",
-        "show" => "user.show",
-        "edit" => "user.edit",
-        "update" => "user.update",
-        "delete" => "user.destroy",
+        "index" => "users.index",
+        "store" => "users.store",
+        "create" => "users.create",
+        "show" => "users.show",
+        "edit" => "users.edit",
+        "update" => "users.update",
+        "delete" => "users.destroy",
     ];
 
     public const USER_VIEW = [
@@ -57,6 +57,10 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view(UserController::USER_VIEW["create"], [
+            'title' => 'Tambah User',
+            'users_route' => UserController::USER_ROUTE
+        ]);
     }
 
     /**
@@ -64,7 +68,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ruleData = [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:8',
+            'role' => 'required',
+        ];
+
+        $valdiateData = $request->validate($ruleData);
+
+        User::create($valdiateData);
+
+        return redirect()->route(UserController::USER_ROUTE["index"])->with('success', 'User berhasil ditambahkan');
+
     }
 
     /**
@@ -73,6 +89,11 @@ class UserController extends Controller
     public function show(User $user)
     {
         //
+        return view(UserController::USER_VIEW["detail"], [
+            'title' => "Detail User $user->name",
+            'user' => $user,
+            'users_route' => UserController::USER_ROUTE,
+        ]);
     }
 
     /**
@@ -81,6 +102,11 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
+        return view(UserController::USER_VIEW["edit"], [
+            'title' => 'Edit User',
+            'user' => $user,
+            'users_route' => UserController::USER_ROUTE,
+        ]);
     }
 
     /**
@@ -89,6 +115,25 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         //
+        $ruleData = [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,' . $user->id,
+            'role' => 'required',
+        ];
+
+        if ($request->input('password')) {
+            $ruleData['password'] = 'required|min:8';
+        }
+
+        $valdiateData = $request->validate($ruleData);
+
+        if ($request->input('password')) {
+            $valdiateData['password'] = bcrypt($request->input('password'));
+        }
+
+        $user->update($valdiateData);
+
+        return redirect()->route(UserController::USER_ROUTE["index"])->with('success', 'User berhasil diupdate');
     }
 
     /**
@@ -97,5 +142,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //
+        User::find($user->id)->delete();
+        return redirect()->route(UserController::USER_ROUTE["index"])->with('success', 'User berhasil dihapus');
     }
 }

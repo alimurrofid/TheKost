@@ -24,23 +24,6 @@ Route::get("/", function(){
 return view("landingpage");
 })->name("landingpage");
 
-Route::get("/dashboard", [DashboardController::class, "index"])->name("dashboard.home");
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard.home');
-// })->name('dashboard.home');
-
-
-    Route::get('/dashboard/users', function () {
-        return view('dashboard.users');
-    })->name('dashboard.users');
-
-    Route::get('/form/user', function () {
-        return view('form.form-user');
-    })->name('form.user');
-
-
-
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::resource('/home', DashboardController::class);
