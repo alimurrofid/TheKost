@@ -2,8 +2,7 @@
     <div class="sidebar-header position-relative">
         <div class="d-flex justify-content-between align-items-center">
             <div class="logo">
-                <a href="#"><img src="{{ asset('assets/img/logo-kos.svg') }}" alt="Logo"
-                        srcset="" /></a>
+                <a href="#"><img src="{{ asset('assets/img/logo-kos.svg') }}" alt="Logo" srcset="" /></a>
             </div>
             <div class="theme-toggle d-flex gap-2 align-items-center mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"
@@ -77,6 +76,12 @@
                 <a href="{{ route('transactions.index') }}" class="sidebar-link">
                     <i class="bi bi-wallet2"></i>
                     <span>Data Transaksi</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('prices.index') }}" class="sidebar-link">
+                    <i class="bi bi-wallet2"></i>
+                    <span>Data Price</span>
                 </a>
             </li>
 

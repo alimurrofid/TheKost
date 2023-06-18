@@ -31,6 +31,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
         ]);
 
+        $this->call([
+            PriceSedeer::class,
+        ]);
+
         // User::create([
         //     'name' => 'test',
         //     'email' => 'test@gmail.com',
