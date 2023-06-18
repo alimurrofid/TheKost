@@ -2,7 +2,7 @@
 @section('title', 'reset')
 @section('content')
     <div class="auth-logo">
-        <a href="index.html"><img src="assets/images/logo/logo.svg" alt="Logo"></a>
+        <a href="index.html"><img src="{{ asset('assets/img/logo-kos.svg') }}" alt="Logo"></a>
     </div>
     <h1 class="auth-title">Reset Password</h1>
     <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>
