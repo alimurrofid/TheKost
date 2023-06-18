@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean("need_image")->default(FALSE);
             $table->timestamps();
         });
+
     }
 
     /**

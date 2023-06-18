@@ -6,6 +6,7 @@ use App\Models\Dormitory;
 use App\Models\PaymentLog;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\Price;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,7 +18,8 @@ class DashboardController extends Controller
             'total_dormitories' => count(Dormitory::all()),
             'total_rooms' => count(Room::all()),
             'total_transactions' => count(PaymentLog::all()),
-            'total_users' => count(User::all())
+            'total_users' => count(User::all()),
+            'show_price' => Price::all()
         ]);
     }
 }
