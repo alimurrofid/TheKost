@@ -130,7 +130,7 @@
                         </div>
                         <div class="card-footer text-center">
                             {{-- <span>{{ $price->price }}</span> --}}
-                            <button class="btn btn-light-primary">Pay Now</button>
+                            <a href="{{ route('bill.create') }}" class="btn btn-light-primary">Pay Now</a>
                         </div>
                     </div>
                 </div>

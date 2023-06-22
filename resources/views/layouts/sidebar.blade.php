@@ -48,12 +48,12 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="sidebar-item">
+            {{-- <li class="sidebar-item">
                 <a href="{{ route('home.index') }}" class="sidebar-link">
                     <i class="bi bi-gear"></i>
                     <span>Setting</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="sidebar-item">
                 <a href="{{ route('users.index') }}" class="sidebar-link">
                     <i class="bi bi-person-rolodex"></i>
@@ -80,8 +80,14 @@
             </li>
             <li class="sidebar-item">
                 <a href="{{ route('prices.index') }}" class="sidebar-link">
-                    <i class="bi bi-wallet2"></i>
+                    <i class="bi bi-cash"></i>
                     <span>Data Price</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a href="{{ route('bill.index') }}" class="sidebar-link">
+                    <i class="bi bi-credit-card"></i>
+                    <span>Data Payment</span>
                 </a>
             </li>
 

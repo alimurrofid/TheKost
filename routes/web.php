@@ -7,6 +7,7 @@ use App\Http\Controllers\DormitoryController;
 use App\Http\Controllers\PaymentLogController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PriceController;
+use App\Http\Controllers\BillController;
 use App\Models\Dormitory;
 use App\Models\PaymentLog;
 
@@ -33,6 +34,8 @@ Route::middleware(['auth','verified'])->group(function () {
     Route::resource('/dashboard/transactions', PaymentLogController::class)->except([ 'edit', 'update']);
     Route::resource('/dashboard/users', UserController::class);
     Route::resource('/dashboard/prices', PriceController::class);
+    Route::resource('/dashboard/bill', BillController::class);
+    Route::post('/midtrans-callback', [PaymentLogController::class, 'callback']);
 });
 
 Route::get('/dashboard/dormitory/payment/{id}/year/{year}', function ($id, $year) {

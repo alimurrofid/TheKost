@@ -16,5 +16,12 @@ class Price extends Model
         'description',
     ];
 
+    public function bills()
+    {
+        return $this->hasMany(Bill::class, "fk_id_price");
+    }
+
 
 }
+
+

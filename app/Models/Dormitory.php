@@ -9,7 +9,7 @@ class Dormitory extends Model
 {
     use HasFactory;
     protected $table = 'dormitories';
-    
+
     protected $fillable = [
         'name',
         'address',
