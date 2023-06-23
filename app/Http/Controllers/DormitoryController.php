@@ -35,12 +35,19 @@ class DormitoryController extends Controller
         "edit" => "dashboard.dormitory.edit",
 
     ];
+
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            if (Gate::denies('index-dormitory')) {
+                abort(403, 'You do not have permission to access this page');
+            }
+        return $next($request);
+        });
+    }
+
     public function index()
     {
-        if (Gate::denies('index-dormitory')) {
-            abort(403, 'You do not have permission to access this page');
-        }
-
         return view(DormitoryController::DORMITORY_VIEW["index"], [
             'title' => 'Data Penghuni',
             'dormitories' => Dormitory::with(["rooms"])->orderBy("name")->paginate(10),
@@ -53,6 +60,8 @@ class DormitoryController extends Controller
      */
     public function create()
     {
+        $this->autorize('index-dormitory');
+
         return view(DormitoryController::DORMITORY_VIEW["create"], [
             'title' => 'Tambah Penghuni',
             'dormitory_route' => DormitoryController::DORMITORY_ROUTE

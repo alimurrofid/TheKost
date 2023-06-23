@@ -17,6 +17,9 @@ class AuthServiceProvider extends ServiceProvider
         'index-room' => ['admin'],
         'index-paymentlog' => ['admin'],
         'index-user' => ['admin'],
+        'index-transaction' => ['admin'],
+        'index-bill' => ['admin'],
+        'index-price' => ['admin'],
     ];
     /**
      * The model to policy mappings for the application.

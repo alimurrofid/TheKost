@@ -29,18 +29,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             UserSeeder::class,
-        ]);
-
-        $this->call([
             PriceSedeer::class,
         ]);
-
-        // User::create([
-        //     'name' => 'test',
-        //     'email' => 'test@gmail.com',
-        //     'email_verified_at' => now(),
-        //     'password' => Hash::make('password')
-        // ]);
 
         //dormitories seeder
         DB::table('dormitories')->insert([

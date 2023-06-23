@@ -36,6 +36,10 @@ class PriceController extends Controller
     public function index(Request $request)
     {
         //
+        if (Gate::denies('index-price')) {
+            abort(403, 'You do not have permission to access this page');
+        }
+
         $prices = DB::table('price')
         ->when($request->input('search'), function ($query, $search) {
             $query->where('name', 'like', '%' . $search . '%')
@@ -121,7 +125,7 @@ class PriceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Price $price)
+    public function destroy($id)
     {
         //
         $price = Price::find($id)->delete();

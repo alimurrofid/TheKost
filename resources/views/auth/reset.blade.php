@@ -2,19 +2,20 @@
 @section('title', 'reset')
 @section('content')
     <div class="auth-logo">
-        <a href="index.html"><img src="{{ asset('assets/img/logo-kos.svg') }}" alt="Logo"></a>
+        <a href="#"><img src="{{ asset('assets/img/logo-kos.svg') }}" alt="Logo"></a>
     </div>
     <h1 class="auth-title">Reset Password</h1>
     <p class="auth-subtitle mb-5">Input your email and we will send you reset password link.</p>
     <form method="POST" action="{{ route('password.update') }}">
         @csrf
-        <input name="token" type="text" value="{{$request->token}}" hidden>
+        <input name="token" type="text" value="{{ $request->token }}" hidden>
         <div class="form-group position-relative has-icon-left mb-4">
-            <input name="email" type="email" class="form-control form-control-xl" placeholder="Email" value="{{$request->email}}" autofocus>
+            <input name="email" type="email" class="form-control form-control-xl" placeholder="Email"
+                value="{{ $request->email }}" autofocus>
             @error('email')
-            <div class="invalid-feedback">
-                {{$message}}
-            </div>
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
             @enderror
             <div class="form-control-icon">
                 <i class="bi bi-envelope"></i>

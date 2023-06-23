@@ -11,8 +11,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-lg-0">
                 <li class="nav-item dropdown me-3">
-                   
-                    
+
+
                 </li>
             </ul>
             <div class="dropdown">
@@ -23,7 +23,7 @@
                                 {{ auth()->user()->name }}
                             </h6>
                             <p class="mb-0 text-sm text-gray-600">
-                                Administrator
+                                {{ auth()->user()->role }}
                             </p>
                         </div>
                         <div class="user-img d-flex align-items-center">
@@ -37,7 +37,7 @@
                     style="min-width: 11rem">
                     <li>
                         <h6 class="dropdown-header">
-                            Hello, {{auth()->user()->name}}!
+                            Hello, {{ auth()->user()->name }}!
                         </h6>
                     </li>
                     <li>
@@ -56,11 +56,13 @@
                         <hr class="dropdown-divider" />
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i class="icon-mid bi bi-box-arrow-left me-2"></i>
+                        <a class="dropdown-item" href="#"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit()"><i
+                                class="icon-mid bi bi-box-arrow-left me-2"></i>
                             Logout</a>
-                            <form form id="logout-form" action="{{ route('logout') }}" method="post">
-                                @csrf
-                            </form>
+                        <form form id="logout-form" action="{{ route('logout') }}" method="post">
+                            @csrf
+                        </form>
 
                     </li>
                 </ul>

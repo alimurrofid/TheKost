@@ -31,10 +31,6 @@ class PaymentLogController extends Controller
      */
     public function index()
     {
-        if (Gate::denies('index-paymentlog')) {
-            abort(403, 'You do not have permission to access this page');
-        }
-
         $transactions = PaymentLog::with('dormitory')->paginate(10);
         $months = config("app.month.language.indonesian");
 

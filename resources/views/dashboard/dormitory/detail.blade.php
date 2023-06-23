@@ -51,9 +51,8 @@
         <div class="mb-3">
             <label for="address" class="form-label">Address</label>
             <span class="form-control border-1 border-primary">{{ $dormitory->address }}</span>
-
         </div>
-        <div class="row mb-3 p-0 flex-sm-column">
+        {{-- <div class="row mb-3 p-0 flex-sm-column">
             <div class="col">
                 <span class="form-control border-1 border-primary">Skema Pembayaran</span>
             </div>
@@ -91,10 +90,11 @@
                         <div class="card-body">
                             <div class="d-flex flex-column flex-md-row w-100 overflow-auto py-0 px-0 py-md-2"
                                 id="month-body">
-                                asdasd
                             </div>
                         </div>
                     </div>
+
+
                     <script>
                         console.log("ok")
                         const headerYear = document.querySelectorAll("a.m-0.text-nowrap.font-weight-bold.text-primary");
@@ -130,28 +130,28 @@
                         });
                     </script>
 
-                    {{-- <script>
-                            const containerresponse = document.getElementById("container-response");
-                            let urlajax = "{{ route("dormitory.index") }}";
-                            let dormitory_id = {{ $dormitory->id }}
+                    <script>
+                        const containerresponse = document.getElementById("container-response");
+                        let urlajax = "{{ route('dormitory.index') }}";
+                        let dormitory_id = {{ $dormitory->id }}
 
-                            const xhr = new XMLHttpRequest();
-                            xhr.onreadystatechange = function () {
-                                if (xhr.readyState == 4 && xhr.status == 200) {
-                                    containerresponse.innerHTML = xhr.responseText;
-                                }
-                            };
+                        const xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState == 4 && xhr.status == 200) {
+                                containerresponse.innerHTML = xhr.responseText;
+                            }
+                        };
 
-                            xhr.open("GET", urlajax + "/payment/" + dormitory_id, true);
+                        xhr.open("GET", urlajax + "/payment/" + dormitory_id, true);
 
-                            xhr.send();
-                        </script> --}}
+                        xhr.send();
+                    </script>
                 @else
                     <span class="form-control border-1 border-danger text-danger text-wrap">Data Tanggal Masuk Kos belum
                         diset</span>
                 @endif
             </div>
-        </div>
+        </div> --}}
 
     </div>
 @endsection

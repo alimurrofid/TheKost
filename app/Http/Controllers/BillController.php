@@ -35,6 +35,10 @@ class BillController extends Controller
     public function index()
     {
         //
+        if (Gate::denies('index-bill')) {
+            abort(403, 'You do not have permission to access this page');
+        }
+
         return view(BillController::BILL_VIEW["index"], [
             'bills' => Bill::with('price')->paginate(10),
             'bill_route' => BillController::BILL_ROUTE,
