@@ -7,6 +7,9 @@ use App\Models\Price;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Midtrans\Config;
+use Midtrans\Snap;
+use Illuminate\Support\Facades\Gate;
+
 
 
 class BillController extends Controller
