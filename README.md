@@ -1,6 +1,5 @@
-<p align="center">
-  <img src="./assets/img/logo-blue.png" alt="The Kost" width="400">
-</p>
+![Logo The Kost](./assets/img/logo-blue.svg)
+
 
 ## About The Kost
 
