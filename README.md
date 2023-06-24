@@ -49,3 +49,18 @@ php artisan db:seed
 ```sh
 php artisan ser
 ```
+
+9. Run php tunnel
+```sh
+php -S localhost:7000
+```
+
+10. Run ngrok
+```sh
+ngrok http localhost:7000
+```
+
+11. Run mailpit
+```sh
+mailpit
+```
