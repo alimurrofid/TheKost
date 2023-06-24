@@ -1,3 +1,9 @@
+<p align="center"><a href="" target="_blank"><img src="assets/img/logo-blue.svg" width="400"></a></p>
+
+## About The Kost
+
+The Kost is a web application that is used to manage boarding houses. This application is made using the Laravel framework. This application is made to fulfill the final project of the web programming course.
+
 ## Installation
 
 1. Clone the repository 
