@@ -1,4 +1,7 @@
-![Logo The Kost](./public/assets/img/logo-blue.svg)
+<p align="center">
+  <img src="./public/assets/img/logo-kos.svg" alt="The Kost">
+</p>
+
 
 
 ## About The Kost
