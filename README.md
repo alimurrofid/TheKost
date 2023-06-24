@@ -1,4 +1,6 @@
-<p align="center"><a href="" target="_blank"><img src="assets/img/logo-blue.svg" width="400"></a></p>
+<p align="center">
+  <img src="./assets/img/logo-blue.png" alt="The Kost" width="400">
+</p>
 
 ## About The Kost
 
