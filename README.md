@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/assets/img/logo-kos.svg" alt="The Kost" width="400">
+  <img src="./public/assets/img/logo-kos.svg" alt="The Kost" width="300">
 </p>
 
 
