@@ -1,4 +1,4 @@
-![Logo The Kost](./assets/img/logo-blue.svg)
+![Logo The Kost](./public/assets/img/logo-blue.svg)
 
 
 ## About The Kost
